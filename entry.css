@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+header,
+main,
+footer {
+  border: 2px solid grey;
+}
+
+header {
+  grid-area: head;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: foot;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 1fr 10%;
+  grid-template-areas:
+    "head"
+    "main"
+    "foot";
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#postArea {
+  background-color: rgb(212, 211, 211);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  text-align: center;
+  color: black;
+}
+#postInteraction {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#addCommentButton {
+  width: 12%;
+  margin: auto 0px;
+}
+
+.new-post {
+  margin: 10px;
+}
+
+.new-post-form {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  color: black;
+}
+
+input {
+  height: 20px;
+  width: 40vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin: 50 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.postButtons {
+  margin: 10px 30%;
+}
+
+#submitButton {
+  width: 40%;
+  position: relative;
+}
+button {
+  width: 40%;
+  position: relative;
+}
+
+.ql-snow {
+  width: 50%;
+  margin: 20px auto 0 auto;
+  background-color: white;
+}
+
+#editor {
+  margin: auto;
+  height: 100px;
+}
+
+header {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.bottom {
+  display: flex;
+}
+
+.comment-count {
+  padding-left: 10px;
+}
