@@ -42,12 +42,12 @@ body {
 #postInteraction {
   margin-bottom: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 #addCommentButton {
-  height: 10%;
-  width: 20%;
+  width: 12%;
+  margin: auto 0px;
 }
 
 .new-post {
