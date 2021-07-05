@@ -107,3 +107,26 @@ a {
 .comment-count {
   padding-left: 10px;
 }
+
+/* #journals {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  color: black;
+} */
+
+#postInteractionBar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.journalContainer {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  color: black;
+}

@@ -31,3 +31,38 @@ const quill = new Quill("#editor", {
   },
   theme: "snow",
 });
+
+let journalsContainer = document.querySelector("#journals");
+
+async function getJournalData() {
+  let response = await fetch("https://debtomza-server.herokuapp.com/journals");
+  let responseJson = await response.json();
+  return responseJson;
+}
+
+async function appendBody() {
+  journalsContainer.innerHTML = "";
+  let journals = await getJournalData();
+  journals.forEach((item) => createJournal(item));
+}
+
+function createJournal(item) {
+  let container = document.createElement("div");
+  container.className = "journalContainer";
+  let html = `<h2>${item.title}</h2>
+ <div id="postInteractionBar">
+   <p>${item.date}</p>
+   <p>${item.comments.length}</p>
+   <p>Emoji</p>
+ </div>`;
+  container.innerHTML = html;
+  journalsContainer.appendChild(container);
+}
+
+getJournalData();
+
+appendBody();
+
+{
+  /* <div class='ql-editor'>${item.content}</div> */
+}
