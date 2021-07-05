@@ -1,6 +1,6 @@
 const toolBaroptions = [
   ["bold", "italic", "underline", "strike"],
-  ["blockquote", "code-block"],
+  ["blockquote", "code-block", "link"],
   [{ list: "ordered" }, { list: "bullet" }],
   [{ header: [1, 2, 3, false] }],
   [{ color: [] }, { background: [] }],
