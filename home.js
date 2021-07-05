@@ -1,21 +1,3 @@
-let form = document.querySelector(".new-post-form");
-let newPostButton = document.querySelector("#newPostButton");
-let cancelButton = document.querySelector("#cancelButton");
-
-form.style.display = "none";
-
-newPostButton.addEventListener("click", revealForm);
-
-function revealForm() {
-  form.style.display = "block";
-}
-
-cancelButton.addEventListener("click", hideForm);
-
-function hideForm() {
-  form.style.display = "none";
-}
-
 const toolBaroptions = [
   ["bold", "italic", "underline", "strike"],
   ["blockquote", "code-block"],
@@ -31,6 +13,50 @@ const quill = new Quill("#editor", {
   },
   theme: "snow",
 });
+
+let form = document.querySelector(".new-post-form");
+let newPostButton = document.querySelector("#newPostButton");
+let cancelButton = document.querySelector("#cancelButton");
+let submitForm = document.querySelector("form");
+
+form.style.display = "none";
+
+newPostButton.addEventListener("click", revealForm);
+
+function revealForm() {
+  form.style.display = "block";
+}
+
+cancelButton.addEventListener("click", hideForm);
+
+function hideForm() {
+  form.style.display = "none";
+}
+
+submitForm.addEventListener("submit", sendForm);
+
+async function sendForm(event) {
+  event.preventDefault();
+  let data = {
+    title: event.target.title.value,
+    content: quill.root.innerHTML,
+  };
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+  const response = await fetch(
+    "https://debtomza-server.herokuapp.com/journals",
+    options
+  );
+  const responseJson = await response.json();
+  console.log(responseJson);
+  location.reload();
+}
 
 let journalsContainer = document.querySelector("#journals");
 
