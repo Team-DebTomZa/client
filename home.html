@@ -5,11 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Home.css" />
+    <script
+      defer
+      src="https://kit.fontawesome.com/41cdfc15ac.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Journal Website</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <h1>Logo</h1>
+      <p>perhaps a small nav bar down here</p>
+    </header>
+
+    <main>
+      <section class="new-post-section">
+        <div class="new-post-bar">
+          <div class="new-post">
+            <h2>New Post</h2>
+            <i class="fas fa-plus-circle fa-3x"></i>
+          </div>
+        </div>
+
+        <div class="new-post-form">
+          <form>
+            <label>Username<input type="text" title="username" /></label>
+            <label>Subject<input type="text" title="subject" /></label>
+            <textarea></textarea>
+            <button>Add Post</button>
+          </form>
+        </div>
+      </section>
+
+      <ul>
+        <li class="row">
+          <a href="#">
+            <h2>Entry One</h2>
+            <div class="bottom">
+              <p class="time-stamp">05/07/21</p>
+              <p class="comment-count">4 Comments</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="row">
+          <a href="#">
+            <h2>Entry Two</h2>
+            <div class="bottom">
+              <p class="time-stamp">05/07/21</p>
+              <p class="comment-count">4 Comments</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
     <footer></footer>
   </body>
 </html>
