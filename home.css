@@ -50,7 +50,6 @@ body {
   margin: 50px;
   border: 2px solid grey;
   border-radius: 25px;
-  /* text-align: center; */
   color: black;
 }
 
@@ -59,9 +58,41 @@ input {
   width: 40vw;
 }
 
-textarea {
-  height: 130px;
-  width: 40vw;
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin: 50 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.postButtons {
+  margin: 10px 30%;
+}
+
+#submitButton {
+  width: 40%;
+  position: relative;
+}
+button {
+  width: 40%;
+  position: relative;
+}
+
+.ql-snow {
+  width: 50%;
+  margin: 20px auto 0 auto;
+  background-color: white;
+}
+
+#editor {
+  margin: auto;
+  height: 100px;
+}
+
+header {
+  text-align: center;
 }
 
 a {
@@ -75,50 +106,4 @@ a {
 
 .comment-count {
   padding-left: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  /* gap: 12px; */
-  margin-top: 10px;
-  margin: 50 auto;
-  padding: 5px;
-  text-align: center;
-  /* width: 70%; */
-}
-
-.postButtons {
-  margin: 10px 30%;
-}
-
-#submitButton {
-  width: 40%;
-  position: relative;
-  /* left: 40%;
-  margin: 10px 0; */
-}
-button {
-  width: 40%;
-  position: relative;
-  /* left: 40%;
-  margin: 10px 0; */
-}
-/* .buttonArrangement {
-  display: inline;
-} */
-
-/* #editor {
-  width: 60%;
-} */
-
-.ql-snow {
-  width: 50%;
-  margin: 20px auto 0 auto;
-  background-color: white;
-}
-
-#editor {
-  margin: auto;
-  height: 100px;
 }
