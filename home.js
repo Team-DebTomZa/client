@@ -70,12 +70,21 @@ async function appendBody() {
   journalsContainer.innerHTML = "";
   let journals = await getJournalData();
   journals.forEach((item) => createJournal(item));
+  let journalTitles = document.querySelectorAll(".journal-title");
+  journalTitles.forEach(title => title.addEventListener('click', redirectToEntryPage))
+}
+
+function redirectToEntryPage(event){
+  let id = event.target.id;
+  localStorage.setItem("journal-id", id);
+  window.location.href = "entry.html";
+  console.log(id);
 }
 
 function createJournal(item) {
   let container = document.createElement("div");
   container.className = "journalContainer";
-  let html = `<h2>${item.title}</h2>
+  let html = `<h2 class="journal-title" id="${item.id}">${item.title}</h2>
  <div id="postInteractionBar">
    <p>${item.date}</p>
    <p>${item.comments.length}</p>
@@ -88,7 +97,3 @@ function createJournal(item) {
 getJournalData();
 
 appendBody();
-
-{
-  /* <div class='ql-editor'>${item.content}</div> */
-}

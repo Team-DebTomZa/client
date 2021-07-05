@@ -40,6 +40,10 @@ body {
   color: white;
 }
 
+#newPostButton:hover{
+  cursor: pointer;
+}
+
 .new-post {
   margin: 10px;
 }
@@ -108,14 +112,6 @@ a {
   padding-left: 10px;
 }
 
-/* #journals {
-  display: block;
-  background-color: rgb(238, 238, 238);
-  margin: 50px;
-  border: 2px solid grey;
-  border-radius: 25px;
-  color: black;
-} */
 
 #postInteractionBar {
   display: flex;
@@ -129,4 +125,9 @@ a {
   border: 2px solid grey;
   border-radius: 25px;
   color: black;
+}
+
+.journal-title:hover{
+  cursor: pointer;
+  color: blue;
 }

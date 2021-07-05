@@ -31,3 +31,16 @@ const quill = new Quill("#editor", {
   },
   theme: "snow",
 });
+
+const journalHolder = document.getElementById('journal');
+journalHolder.className = "ql-editor";
+let selectedId = localStorage.getItem('journal-id');
+getJournalWithId(selectedId);
+
+
+async function getJournalWithId(id){
+  let response = await fetch("https://debtomza-server.herokuapp.com/journals");
+  let responseJson = await response.json();
+  let journal = responseJson[id-1];
+  journalHolder.innerHTML = journal.content;
+}
