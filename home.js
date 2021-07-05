@@ -15,3 +15,19 @@ cancelButton.addEventListener("click", hideForm);
 function hideForm() {
   form.style.display = "none";
 }
+
+const toolBaroptions = [
+  ["bold", "italic", "underline", "strike"],
+  ["blockquote", "code-block"],
+  [{ list: "ordered" }, { list: "bullet" }],
+  [{ header: [1, 2, 3, false] }],
+  [{ color: [] }, { background: [] }],
+  [{ font: [] }],
+  [{ align: [] }],
+];
+const quill = new Quill("#editor", {
+  modules: {
+    toolbar: toolBaroptions,
+  },
+  theme: "snow",
+});

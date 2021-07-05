@@ -11,6 +11,12 @@
       src="https://kit.fontawesome.com/41cdfc15ac.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
     <title>Journal Website</title>
   </head>
   <body>
@@ -30,13 +36,21 @@
 
         <div class="new-post-form">
           <form>
-            <label>Username<input type="text" title="username" /></label>
+            <!-- <label>Username<input type="text" title="username" /></label>
             <label> Subject<input type="text" title="subject" /></label>
-            <label> Content<textarea></textarea></label>
-          </form>
+            <label> Content<textarea></textarea></label> -->
 
-          <button>Add Post</button>
-          <button id="cancelButton">Cancel</button>
+            <div>
+              <label for="title">Title: </label>
+              <input type="text" id="title" />
+            </div>
+
+            <div id="editor"></div>
+            <div class="postButtons">
+              <input id="submitButton" type="submit" value="Add Post" />
+              <button id="cancelButton">Cancel</button>
+            </div>
+          </form>
         </div>
       </section>
 
