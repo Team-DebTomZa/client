@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
   margin: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 15% 1fr 10%;
+  grid-template-rows: 15vh 1fr 10vh;
   grid-template-areas:
     "head"
     "main"
@@ -106,4 +106,27 @@ a {
 
 .comment-count {
   padding-left: 10px;
+}
+
+/* #journals {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  color: black;
+} */
+
+#postInteractionBar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.journalContainer {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  color: black;
 }
