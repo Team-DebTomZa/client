@@ -1,6 +1,7 @@
+//QUILL
 const toolBaroptions = [
   ["bold", "italic", "underline", "strike"],
-  ["blockquote", "code-block", "link"],
+  ["code-block", "link"],
   [{ list: "ordered" }, { list: "bullet" }],
   [{ header: [1, 2, 3, false] }],
   [{ color: [] }, { background: [] }],
@@ -13,6 +14,24 @@ const quill = new Quill("#editor", {
   },
   theme: "snow",
 });
+
+const charLimit = 100;
+const limitSpan = document.getElementById('limit-span');
+let isAllowedToPost = false;
+
+quill.on('text-change', function (delta, old, source) {
+  let numChars = quill.getLength();
+  limitSpan.textContent = `Character Limit: ${numChars - 1}/${charLimit}`
+  if (numChars > charLimit) {
+    limitSpan.style.color = 'red';
+    isAllowedToPost = false;
+  } else {
+    limitSpan.style.color = 'green';
+    isAllowedToPost = true;
+  }
+});
+
+
 
 let form = document.querySelector(".new-post-form");
 let newPostButton = document.querySelector("#newPostButton");
@@ -37,6 +56,9 @@ submitForm.addEventListener("submit", sendForm);
 
 async function sendForm(event) {
   event.preventDefault();
+  if (!isAllowedToPost){
+    return alert("You are over the character limit, please reduce the size of your entry and try again.")
+  }
   let data = {
     title: event.target.title.value,
     content: quill.root.innerHTML,

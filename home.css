@@ -72,27 +72,28 @@ form {
 }
 
 .postButtons {
-  margin: 10px 30%;
+  margin: 20px 20px;
 }
 
 #submitButton {
-  width: 40%;
+  width: 30%;
   position: relative;
 }
+
 button {
-  width: 40%;
+  width: 30%;
   position: relative;
 }
 
 .ql-snow {
-  width: 50%;
+  width: 70%;
   margin: 20px auto 0 auto;
   background-color: white;
 }
 
 #editor {
   margin: auto;
-  height: 100px;
+  height: 200px;
 }
 
 header {
