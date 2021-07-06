@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
-/* header,
-main,
-footer {
-  border: 2px solid grey;
-} */
+:root {
+  --backgroundColour: white;
+  --textColor: black;
+  --border: grey;
+  --newPostBar: rgb(175, 175, 175);
+  --newPostForm: rgb(238, 238, 238);
+  --journalContainer: rgb(238, 238, 238);
+  --journalContainerHover: #3e8e41;
+}
 
 header {
   grid-area: head;
@@ -29,15 +33,17 @@ body {
     "main"
     "foot";
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--backgroundColour);
+  color: var(--textColor);
 }
 main {
   margin-bottom: 20px;
 }
 
 .new-post-bar {
-  background-color: rgb(175, 175, 175);
+  background-color: var(--newPostBar);
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--border);
   border-radius: 15px;
   text-align: center;
   color: white;
@@ -53,11 +59,11 @@ main {
 
 .new-post-form {
   display: block;
-  background-color: rgb(238, 238, 238);
+  background-color: var(--newPostForm);
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--border);
   border-radius: 15px;
-  color: black;
+  color: var(--textColor);
 }
 
 input {
@@ -131,15 +137,15 @@ a {
 
 .journalContainer {
   display: block;
-  background-color: rgb(238, 238, 238);
+  background-color: var(--journalContainer);
   margin: 0px 50px;
-  border: 1px solid grey;
+  border: 1px solid var(--border);
   border-radius: 0px;
-  color: black;
+  color: var(--textColor);
   transition: 0.3s;
 }
 .journalContainer:hover {
-  background-color: #3e8e41;
+  background-color: var(--journalContainerHover);
   color: white;
 }
 
@@ -150,16 +156,15 @@ a {
 
 .journal-title:hover {
   cursor: pointer;
-  /* color: grey; */
 }
 
-.emojis{
+.emojis {
   width: 20%;
   display: flex;
   justify-content: space-between;
 }
 
-.emojis i{
+.emojis i {
   font-size: 20px;
   margin-right: 5px;
 }
