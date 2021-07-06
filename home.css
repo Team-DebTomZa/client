@@ -99,6 +99,13 @@ button {
   height: 200px;
 }
 
+#gif-form {
+  margin: 10px auto;
+}
+#gif-search {
+  width: 30vw;
+}
+
 header {
   text-align: center;
 }
