@@ -105,10 +105,10 @@ header {
   text-align: center;
 }
 
-a {
+/* a {
   text-decoration: none;
   color: black;
-}
+} */
 
 .bottom {
   display: flex;
@@ -116,4 +116,12 @@ a {
 
 .comment-count {
   padding-left: 10px;
+}
+
+pre{
+  padding: 10px !important;
+  padding-left: 20px !important;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  border-radius: 3px;
 }
