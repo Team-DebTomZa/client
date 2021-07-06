@@ -15,35 +15,20 @@
     <header>
         <h1>< /br ></h1>
         <p>For those new to tech and just need a <\br ></p>
-      </header>
-  
+    </header>
       <main>
-
-        <section id='postArea'>
-            <h2>Subject
-            </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eius mollitia, eveniet eos saepe atque assumenda cumque, autem accusamus recusandae necessitatibus maxime iusto doloribus quam hic modi. Eaque, minima perferendis.</p>
-            <div id='postInteraction'>
-            <p>Date: 05/07/2021</p>
-            <p>4 Comments</p>
-            <button id='addCommentButton'>Add Comment</button></div>
-
-
-        </section>
-            <form class="new-post-form">
-              <div id="editor"></div>
-              <div class="postButtons">
-                <input id="submitButton" type="submit" value="Add Comment" />
-                <button type="button" id="cancelButton">Cancel</button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        <section id="journal">
-
-        </section>
-  
+        <div id="journal"></div>
+        <div id="interaction-bar">
+          <div>Comments</div>
+          <div>Date</div>
+          <div>Emojis</div>
+        </div>
+        <div id="comments-container"></div>
+        <form id="comment-form">
+          <label for="comment">Add a comment: </label>
+          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+          <input type="submit" value="add comment">
+        </form>
       </main>
   </body>
 </html>
