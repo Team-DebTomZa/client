@@ -15,7 +15,7 @@ const quill = new Quill("#editor", {
   theme: "snow",
 });
 
-const charLimit = 100;
+const charLimit = 400;
 const limitSpan = document.getElementById('limit-span');
 let isAllowedToPost = true;
 
@@ -33,6 +33,7 @@ quill.on('text-change', function (delta, old, source) {
 
 //GIPHY
 
+let gifUrl = null;
 const gifButton = document.getElementById('gif-button');
 const gifImage = document.getElementById('gif');
 const gifSearch = document.getElementById('gif-search');
@@ -50,7 +51,7 @@ async function getRandomGif(){
 
   const response = await fetch(url);
   const responseJson = await response.json();
-  const gifUrl = responseJson.data.image_url;
+  gifUrl = responseJson.data.image_url;
   gifImage.setAttribute('src', gifUrl);
   console.log(responseJson);
 }
@@ -86,6 +87,7 @@ async function sendForm(event) {
   let data = {
     title: event.target.title.value,
     content: quill.root.innerHTML,
+    gifUrl
   };
   const options = {
     method: "POST",

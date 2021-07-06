@@ -52,7 +52,11 @@ async function getJournalWithId(id){
   let response = await fetch("https://debtomza-server.herokuapp.com/journals");
   let responseJson = await response.json();
   let journal = responseJson[id-1];
+  document.title = journal.title;
   journalHolder.innerHTML = journal.content;
+  let gifImage = document.createElement('img');
+  gifImage.setAttribute('src', journal.gifUrl);
+  journalHolder.appendChild(gifImage);
   let comments = journal.comments;
   comments.forEach(comment => createComment(comment));
 }
