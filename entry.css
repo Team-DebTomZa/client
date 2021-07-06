@@ -10,6 +10,14 @@
   --newPostForm: rgb(238, 238, 238); */
 }
 
+/* :root {
+  --red: #e85a4f;
+  --peach: #e98074;
+  --dark-grey: #8e8d8a;
+  --beige: #d8c3a5;
+  --light-grey: #eae7dc;
+} */
+
 header {
   grid-area: head;
 }

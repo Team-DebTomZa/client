@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+/* :root {
+  --red: #e85a4f;
+  --peach: #e98074;
+  --dark-grey: #8e8d8a;
+  --beige: #d8c3a5;
+  --light-grey: #eae7dc;
+} */
+
 /* header,
 main,
 footer {
