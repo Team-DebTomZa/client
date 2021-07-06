@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 
-header,
+/* header,
 main,
 footer {
   border: 2px solid grey;
-}
+} */
 
 header {
   grid-area: head;
@@ -30,17 +30,20 @@ body {
     "foot";
   font-family: Arial, Helvetica, sans-serif;
 }
+main {
+  margin-bottom: 20px;
+}
 
 .new-post-bar {
   background-color: rgb(175, 175, 175);
   margin: 50px;
   border: 2px solid grey;
-  border-radius: 25px;
+  border-radius: 15px;
   text-align: center;
   color: white;
 }
 
-#newPostButton:hover{
+#newPostButton:hover {
   cursor: pointer;
 }
 
@@ -53,7 +56,7 @@ body {
   background-color: rgb(238, 238, 238);
   margin: 50px;
   border: 2px solid grey;
-  border-radius: 25px;
+  border-radius: 15px;
   color: black;
 }
 
@@ -113,22 +116,47 @@ a {
   padding-left: 10px;
 }
 
-
 #postInteractionBar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 0px 30px;
 }
 
 .journalContainer {
   display: block;
   background-color: rgb(238, 238, 238);
-  margin: 50px;
-  border: 2px solid grey;
-  border-radius: 25px;
+  margin: 0px 50px;
+  border: 1px solid grey;
+  border-radius: 0px;
   color: black;
+  transition: 0.3s;
+}
+.journalContainer:hover {
+  background-color: #3e8e41;
+  color: white;
 }
 
-.journal-title:hover{
+.journal-title {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.journal-title:hover {
   cursor: pointer;
-  color: blue;
+  /* color: grey; */
+}
+
+main div a:nth-child(1) {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+main div a:nth-child(2) {
+  color: #1a0dab;
+  text-decoration: none;
+  display: block;
+  font-size: x-large;
+  margin-bottom: 10px;
+  padding-top: 10px;
 }
