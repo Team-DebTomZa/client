@@ -58,6 +58,7 @@ async function getRandomGif(){
 }
 
 //General
+let journals;
 let form = document.querySelector(".new-post-form");
 let newPostButton = document.querySelector("#newPostButton");
 let cancelButton = document.querySelector("#cancelButton");
@@ -118,12 +119,11 @@ async function getJournalData() {
 
 async function appendBody() {
   journalsContainer.innerHTML = "";
-  let journals = await getJournalData();
+  journals = await getJournalData();
+  journals.reverse(); //so that the latest entries appear at top of page
   journals.forEach((item) => createJournal(item));
   let journalTitles = document.querySelectorAll(".journal-title");
-  journalTitles.forEach((title) =>
-    title.addEventListener("click", redirectToEntryPage)
-  );
+  journalTitles.forEach((title) => title.addEventListener("click", redirectToEntryPage));
 }
 
 function redirectToEntryPage(event) {
@@ -145,7 +145,5 @@ function createJournal(item) {
   container.innerHTML = html;
   journalsContainer.appendChild(container);
 }
-
-getJournalData();
 
 appendBody();
