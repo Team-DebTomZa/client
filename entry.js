@@ -45,8 +45,12 @@ async function postComment(event) {
 async function getJournalWithId(id) {
   let response = await fetch("https://debtomza-server.herokuapp.com/journals");
   let responseJson = await response.json();
-  let journal = responseJson[id - 1];
+  let journal = responseJson[id-1];
+  document.title = journal.title;
   journalHolder.innerHTML = journal.content;
+  let gifImage = document.createElement('img');
+  gifImage.setAttribute('src', journal.gifUrl);
+  journalHolder.appendChild(gifImage);
   let comments = journal.comments;
   comments.forEach((comment) => createComment(comment));
 }
@@ -57,20 +61,4 @@ function createComment(comment) {
   commentContainer.appendChild(div);
 }
 
-// let comment = document.querySelector("form");
-// let addCommentButton = document.querySelector("#addCommentButton");
-// let cancelButton = document.querySelector("#cancelButton");
 
-// comment.style.display = "none";
-
-// addCommentButton.addEventListener("click", revealForm);
-
-// function revealForm() {
-//   comment.style.display = "block";
-// }
-
-// cancelButton.addEventListener("click", hideForm);
-
-// function hideForm() {
-//   comment.style.display = "none";
-// }
