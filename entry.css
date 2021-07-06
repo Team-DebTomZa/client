@@ -178,3 +178,19 @@ pre {
   width: 10vw;
   margin: 0 auto;
 }
+
+.emojis{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emojis i{
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.emojis i:hover{
+  cursor: pointer;
+  color: blue;
+}
