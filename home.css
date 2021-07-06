@@ -40,6 +40,10 @@ body {
   color: white;
 }
 
+#newPostButton:hover{
+  cursor: pointer;
+}
+
 .new-post {
   margin: 10px;
 }
@@ -68,27 +72,28 @@ form {
 }
 
 .postButtons {
-  margin: 10px 30%;
+  margin: 20px 20px;
 }
 
 #submitButton {
-  width: 40%;
+  width: 30%;
   position: relative;
 }
+
 button {
-  width: 40%;
+  width: 30%;
   position: relative;
 }
 
 .ql-snow {
-  width: 50%;
+  width: 70%;
   margin: 20px auto 0 auto;
   background-color: white;
 }
 
 #editor {
   margin: auto;
-  height: 100px;
+  height: 200px;
 }
 
 header {
@@ -108,14 +113,6 @@ a {
   padding-left: 10px;
 }
 
-/* #journals {
-  display: block;
-  background-color: rgb(238, 238, 238);
-  margin: 50px;
-  border: 2px solid grey;
-  border-radius: 25px;
-  color: black;
-} */
 
 #postInteractionBar {
   display: flex;
@@ -129,4 +126,9 @@ a {
   border: 2px solid grey;
   border-radius: 25px;
   color: black;
+}
+
+.journal-title:hover{
+  cursor: pointer;
+  color: blue;
 }
