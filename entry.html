@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="entry.css" />
+    <script
+      defer
+      src="https://kit.fontawesome.com/41cdfc15ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="entry.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="homeButton">< /br ></h1>
+      <p>For those new to tech and just need a <\br ></p>
+    </header>
+    <main>
+      <div id="journalContainer">
+        <h2 id="journalTitle"></h2>
+        <div id="journal"></div>
+        <div id="interaction-bar">
+          <div id="date">Date</div>
+          <div id="num-comments"></div>
+          <div class="emojis" id="emojis">
+            <div id="smile"><i class="far fa-smile-beam"></i></div>
+            <div id="laugh"><i class="far fa-grin-squint-tears"></i></div>
+            <div id="unhappy"><i class="far fa-frown"></i></div></div>
+        </div>
+      </div>
+
+      <div id="comments-container"><h2>Comments:</h2></div>
+      <form id="comment-form">
+        <label for="comment">Add a comment: </label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <input id="submitFormButton" type="submit" value="Add comment!" />
+      </form>
+    </main>
+  </body>
+</html>

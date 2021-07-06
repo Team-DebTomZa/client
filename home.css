@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+/* header,
+main,
+footer {
+  border: 2px solid grey;
+} */
+
+header {
+  grid-area: head;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: foot;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15vh 1fr 10vh;
+  grid-template-areas:
+    "head"
+    "main"
+    "foot";
+  font-family: Arial, Helvetica, sans-serif;
+}
+main {
+  margin-bottom: 20px;
+}
+
+.new-post-bar {
+  background-color: rgb(175, 175, 175);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+#newPostButton:hover {
+  cursor: pointer;
+}
+
+.new-post {
+  margin: 10px;
+}
+
+.new-post-form {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 50px;
+  border: 2px solid grey;
+  border-radius: 15px;
+  color: black;
+}
+
+input {
+  height: 20px;
+  width: 40vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin: 50 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.postButtons {
+  margin: 20px 20px;
+}
+
+#submitButton {
+  width: 30%;
+  position: relative;
+}
+
+button {
+  width: 30%;
+  position: relative;
+}
+
+.ql-snow {
+  width: 70%;
+  margin: 20px auto 0 auto;
+  background-color: white;
+}
+
+#editor {
+  margin: auto;
+  height: 200px;
+}
+
+#gif-form {
+  margin: 10px auto;
+}
+#gif-search {
+  width: 30vw;
+}
+
+header {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.bottom {
+  display: flex;
+}
+
+.comment-count {
+  padding-left: 10px;
+}
+
+#postInteractionBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 30px;
+}
+
+.journalContainer {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  margin: 0px 50px;
+  border: 1px solid grey;
+  border-radius: 0px;
+  color: black;
+  transition: 0.3s;
+}
+.journalContainer:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+.journal-title {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.journal-title:hover {
+  cursor: pointer;
+  /* color: grey; */
+}
+
+.emojis{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emojis i{
+  font-size: 20px;
+  margin-right: 5px;
+}
