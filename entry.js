@@ -1,5 +1,7 @@
 //Get Home Button//
 
+let journal;
+
 const homeButton = document.getElementById("homeButton");
 
 const journalTitle = document.getElementById("journalTitle");
@@ -47,7 +49,7 @@ async function postComment(event) {
 async function getJournalWithId(id) {
   let response = await fetch("https://debtomza-server.herokuapp.com/journals");
   let responseJson = await response.json();
-  let journal = responseJson[id - 1];
+  journal = responseJson[id - 1];
   document.title = journal.title;
   journalTitle.textContent = journal.title;
   journalHolder.innerHTML = journal.content;
@@ -60,6 +62,7 @@ async function getJournalWithId(id) {
 
   let comments = journal.comments;
   comments.forEach((comment) => createComment(comment));
+  renderInteractionBar();
 }
 
 function createComment(comment) {
@@ -67,3 +70,89 @@ function createComment(comment) {
   div.textContent = comment;
   commentContainer.appendChild(div);
 }
+
+let smileEmoji, laughEmoji, unhappyEmoji;
+
+function renderInteractionBar(){
+  let numComments = journal.comments.length;
+  const commentsElement = document.getElementById('num-comments');
+  const dateElement = document.getElementById('date');
+  // const emojiElement = document.getElementById('emojis');
+  // emojiElement.innerHTML = ``
+  smileEmoji = document.getElementById('smile');
+  smileEmoji.innerHTML += journal.emojis[0];
+  smileEmoji.addEventListener('click', () => incrementCount('smile'))
+
+  laughEmoji = document.getElementById('laugh');
+  laughEmoji.innerHTML += journal.emojis[1];
+  laughEmoji.addEventListener('click', () => incrementCount('laugh'))
+
+  unhappyEmoji = document.getElementById('unhappy');
+  unhappyEmoji.innerHTML += journal.emojis[2];
+  unhappyEmoji.addEventListener('click', () => incrementCount('unhappy'));
+
+  dateElement.textContent = journal.date;
+  if (numComments === 1){
+    commentsElement.textContent = `${numComments} comment`;
+  } else {
+    commentsElement.textContent = `${numComments} comments`;
+  }
+}
+
+function incrementCount(emoji){
+  let regex = /\d+/;
+
+  if (emoji === 'smile'){
+    changeInnerHTML(smileEmoji);
+    let emojiArray = journal.emojis;
+    emojiArray[0] += 1;
+    sendEmojiUpdate(emojiArray)
+  }
+
+  if (emoji === 'laugh'){
+    changeInnerHTML(laughEmoji);
+    let emojiArray = journal.emojis;
+    emojiArray[1] += 1;
+    sendEmojiUpdate(emojiArray)
+  }
+
+  if (emoji === 'unhappy'){
+    changeInnerHTML(unhappyEmoji);
+    let emojiArray = journal.emojis;
+    emojiArray[2] += 1;
+    sendEmojiUpdate(emojiArray)
+  }
+}
+
+function changeInnerHTML(emojiElement){
+  let regex = /\d+/;
+  let numStr = emojiElement.innerHTML.match(regex)[0];
+  let digits = numStr.length;
+  let num = parseInt(numStr);
+  emojiElement.innerHTML = emojiElement.innerHTML.slice(0, emojiElement.innerHTML.length - digits - 1);
+  emojiElement.innerHTML += String(num + 1 );
+}
+
+async function sendEmojiUpdate(emojis){
+  let data = {
+    emojis
+  };
+  const options = {
+    method: "PATCH",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+  const response = await fetch(
+    `https://debtomza-server.herokuapp.com/journals/${selectedId}`,
+    options
+  );
+  const responseJson = await response.json();
+  console.log(responseJson);
+}
+
+
+
+
