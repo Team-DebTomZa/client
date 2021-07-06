@@ -139,8 +139,8 @@ function createJournal(item) {
   let html = `<h2 class="journal-title" id="${item.id}">${item.title}</h2>
  <div id="postInteractionBar">
    <p>${item.date}</p>
-   <p>${item.comments.length}</p>
-   <p>Emoji</p>
+   <p>${item.comments.length} comments</p>
+   <div class="emojis"><div><i class="far fa-smile-beam"></i>${item.emojis[0]}</div><div><i class="far fa-grin-squint-tears"></i>${item.emojis[1]}</div><div><i class="far fa-frown"></i>${item.emojis[2]}</div></div>
  </div>`;
   container.innerHTML = html;
   journalsContainer.appendChild(container);
