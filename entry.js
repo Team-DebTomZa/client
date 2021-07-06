@@ -1,35 +1,29 @@
-// let comment = document.querySelector("form");
-// let addCommentButton = document.querySelector("#addCommentButton");
-// let cancelButton = document.querySelector("#cancelButton");
+//Get Home Button//
 
-// comment.style.display = "none";
+const homeButton = document.getElementById("homeButton");
 
-// addCommentButton.addEventListener("click", revealForm);
+homeButton.addEventListener("click", goHome);
 
-// function revealForm() {
-//   comment.style.display = "block";
-// }
+function goHome() {
+  console.log("clicked");
+  window.location.href = "home.html";
+}
 
-// cancelButton.addEventListener("click", hideForm);
+const journalHolder = document.getElementById("journal");
 
-// function hideForm() {
-//   comment.style.display = "none";
-// }
-
-const journalHolder = document.getElementById('journal');
 const commentContainer = document.getElementById("comments-container");
-const form = document.getElementById('comment-form');
-form.addEventListener('submit', postComment);
+
+const form = document.getElementById("comment-form");
+form.addEventListener("submit", postComment);
 
 journalHolder.className = "ql-editor";
-let selectedId = localStorage.getItem('journal-id');
+let selectedId = localStorage.getItem("journal-id");
 getJournalWithId(selectedId);
 
-
-async function postComment(event){
+async function postComment(event) {
   event.preventDefault();
   let data = {
-    newComment: event.target.comment.value
+    newComment: event.target.comment.value,
   };
   const options = {
     method: "PATCH",
@@ -48,7 +42,7 @@ async function postComment(event){
   location.reload();
 }
 
-async function getJournalWithId(id){
+async function getJournalWithId(id) {
   let response = await fetch("https://debtomza-server.herokuapp.com/journals");
   let responseJson = await response.json();
   let journal = responseJson[id-1];
@@ -58,11 +52,13 @@ async function getJournalWithId(id){
   gifImage.setAttribute('src', journal.gifUrl);
   journalHolder.appendChild(gifImage);
   let comments = journal.comments;
-  comments.forEach(comment => createComment(comment));
+  comments.forEach((comment) => createComment(comment));
 }
 
-function createComment(comment){
-  let div = document.createElement('div');
+function createComment(comment) {
+  let div = document.createElement("div");
   div.textContent = comment;
   commentContainer.appendChild(div);
 }
+
+

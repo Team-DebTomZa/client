@@ -19,20 +19,21 @@ const charLimit = 400;
 const limitSpan = document.getElementById('limit-span');
 let isAllowedToPost = true;
 
-quill.on('text-change', function (delta, old, source) {
+
+quill.on("text-change", function (delta, old, source) {
   let numChars = quill.getLength();
-  limitSpan.textContent = `Character Limit: ${numChars - 1}/${charLimit}`
+  limitSpan.textContent = `Character Limit: ${numChars - 1}/${charLimit}`;
   if (numChars > charLimit) {
-    limitSpan.style.color = 'red';
+    limitSpan.style.color = "red";
     isAllowedToPost = false;
   } else {
-    limitSpan.style.color = 'green';
+    limitSpan.style.color = "green";
     isAllowedToPost = true;
   }
 });
 
-//GIPHY
 
+//GIPHY
 let gifUrl = null;
 const gifButton = document.getElementById('gif-button');
 const gifImage = document.getElementById('gif');
@@ -57,7 +58,6 @@ async function getRandomGif(){
 }
 
 //General
-
 let form = document.querySelector(".new-post-form");
 let newPostButton = document.querySelector("#newPostButton");
 let cancelButton = document.querySelector("#cancelButton");
@@ -81,8 +81,10 @@ submitForm.addEventListener("submit", sendForm);
 
 async function sendForm(event) {
   event.preventDefault();
-  if (!isAllowedToPost){
-    return alert("You are over the character limit, please reduce the size of your entry and try again.")
+  if (!isAllowedToPost) {
+    return alert(
+      "You are over the character limit, please reduce the size of your entry and try again."
+    );
   }
   let data = {
     title: event.target.title.value,
@@ -119,10 +121,12 @@ async function appendBody() {
   let journals = await getJournalData();
   journals.forEach((item) => createJournal(item));
   let journalTitles = document.querySelectorAll(".journal-title");
-  journalTitles.forEach(title => title.addEventListener('click', redirectToEntryPage))
+  journalTitles.forEach((title) =>
+    title.addEventListener("click", redirectToEntryPage)
+  );
 }
 
-function redirectToEntryPage(event){
+function redirectToEntryPage(event) {
   let id = event.target.id;
   localStorage.setItem("journal-id", id);
   window.location.href = "entry.html";
