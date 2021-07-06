@@ -1,25 +1,4 @@
-// let comment = document.querySelector("form");
-// let addCommentButton = document.querySelector("#addCommentButton");
-// let cancelButton = document.querySelector("#cancelButton");
-
-// comment.style.display = "none";
-
-// addCommentButton.addEventListener("click", revealForm);
-
-// function revealForm() {
-//   comment.style.display = "block";
-// }
-
-// cancelButton.addEventListener("click", hideForm);
-
-// function hideForm() {
-//   comment.style.display = "none";
-// }
-
-const journalHolder = document.getElementById("journal");
-const commentContainer = document.getElementById("comments-container");
-const form = document.getElementById("comment-form");
-form.addEventListener("submit", postComment);
+//Get Home Button//
 
 const homeButton = document.getElementById("homeButton");
 
@@ -29,6 +8,13 @@ function goHome() {
   console.log("clicked");
   window.location.href = "home.html";
 }
+
+const journalHolder = document.getElementById("journal");
+
+const commentContainer = document.getElementById("comments-container");
+
+const form = document.getElementById("comment-form");
+form.addEventListener("submit", postComment);
 
 journalHolder.className = "ql-editor";
 let selectedId = localStorage.getItem("journal-id");
@@ -70,3 +56,21 @@ function createComment(comment) {
   div.textContent = comment;
   commentContainer.appendChild(div);
 }
+
+// let comment = document.querySelector("form");
+// let addCommentButton = document.querySelector("#addCommentButton");
+// let cancelButton = document.querySelector("#cancelButton");
+
+// comment.style.display = "none";
+
+// addCommentButton.addEventListener("click", revealForm);
+
+// function revealForm() {
+//   comment.style.display = "block";
+// }
+
+// cancelButton.addEventListener("click", hideForm);
+
+// function hideForm() {
+//   comment.style.display = "none";
+// }

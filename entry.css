@@ -2,11 +2,12 @@
   box-sizing: border-box;
 }
 
-/* header,
-main,
-footer {
-  border: 2px solid grey;
-} */
+:root {
+  --backgroundColour: white;
+  --journal: rgb(238, 238, 238);
+  /* --postArea: rgb(196, 84, 84);
+  --newPostForm: rgb(238, 238, 238); */
+}
 
 header {
   grid-area: head;
@@ -29,20 +30,27 @@ body {
     "main"
     "foot";
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--backgroundColour);
+}
+
+#homeButton:hover {
+  cursor: pointer;
 }
 
 #postArea {
-  background-color: rgb(212, 211, 211);
+  background-color: var(--postArea);
   margin: 50px;
   border: 2px solid grey;
   border-radius: 25px;
   text-align: center;
   color: black;
 }
+
 #postInteraction {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
+  border: 2px solid grey;
 }
 
 #addCommentButton {
@@ -56,7 +64,7 @@ body {
 
 .new-post-form {
   display: block;
-  background-color: rgb(238, 238, 238);
+  background-color: var(--newPostForm);
   margin: 50px;
   border: 2px solid grey;
   border-radius: 25px;
@@ -105,11 +113,6 @@ header {
   text-align: center;
 }
 
-/* a {
-  text-decoration: none;
-  color: black;
-} */
-
 .bottom {
   display: flex;
 }
@@ -131,13 +134,14 @@ pre {
   margin: 50px;
   border: 2px solid grey;
   border-radius: 15px;
-  background-color: rgb(238, 238, 238);
+  background-color: var(--journal);
 }
 
 #interaction-bar {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 50px;
+  margin: 0 50px 50px 50px;
+  border: 2px solid grey;
 }
 
 #comments-container {
