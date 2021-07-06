@@ -2,6 +2,8 @@
 
 const homeButton = document.getElementById("homeButton");
 
+const journalTitle = document.getElementById("journalTitle");
+
 homeButton.addEventListener("click", goHome);
 
 function goHome() {
@@ -45,14 +47,17 @@ async function postComment(event) {
 async function getJournalWithId(id) {
   let response = await fetch("https://debtomza-server.herokuapp.com/journals");
   let responseJson = await response.json();
-  let journal = responseJson[id-1];
+  let journal = responseJson[id - 1];
   document.title = journal.title;
+  journalTitle.textContent = journal.title;
   journalHolder.innerHTML = journal.content;
+
   if (journal.gifUrl){
     let gifImage = document.createElement('img');
     gifImage.setAttribute('src', journal.gifUrl);
     journalHolder.appendChild(gifImage);
   };
+
   let comments = journal.comments;
   comments.forEach((comment) => createComment(comment));
 }
@@ -62,5 +67,3 @@ function createComment(comment) {
   div.textContent = comment;
   commentContainer.appendChild(div);
 }
-
-
