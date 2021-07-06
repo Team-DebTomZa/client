@@ -16,20 +16,28 @@
 //   comment.style.display = "none";
 // }
 
-const journalHolder = document.getElementById('journal');
+const journalHolder = document.getElementById("journal");
 const commentContainer = document.getElementById("comments-container");
-const form = document.getElementById('comment-form');
-form.addEventListener('submit', postComment);
+const form = document.getElementById("comment-form");
+form.addEventListener("submit", postComment);
+
+const homeButton = document.getElementById("homeButton");
+
+homeButton.addEventListener("click", goHome);
+
+function goHome() {
+  console.log("clicked");
+  window.location.href = "home.html";
+}
 
 journalHolder.className = "ql-editor";
-let selectedId = localStorage.getItem('journal-id');
+let selectedId = localStorage.getItem("journal-id");
 getJournalWithId(selectedId);
 
-
-async function postComment(event){
+async function postComment(event) {
   event.preventDefault();
   let data = {
-    newComment: event.target.comment.value
+    newComment: event.target.comment.value,
   };
   const options = {
     method: "PATCH",
@@ -48,17 +56,17 @@ async function postComment(event){
   location.reload();
 }
 
-async function getJournalWithId(id){
+async function getJournalWithId(id) {
   let response = await fetch("https://debtomza-server.herokuapp.com/journals");
   let responseJson = await response.json();
-  let journal = responseJson[id-1];
+  let journal = responseJson[id - 1];
   journalHolder.innerHTML = journal.content;
   let comments = journal.comments;
-  comments.forEach(comment => createComment(comment));
+  comments.forEach((comment) => createComment(comment));
 }
 
-function createComment(comment){
-  let div = document.createElement('div');
+function createComment(comment) {
+  let div = document.createElement("div");
   div.textContent = comment;
   commentContainer.appendChild(div);
 }
