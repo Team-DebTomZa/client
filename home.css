@@ -81,7 +81,7 @@ form {
 }
 
 .postButtons {
-  margin: 20px 20px;
+  margin: 10px 20px 20px 20px;
 }
 
 #submitButton {
@@ -106,10 +106,18 @@ button {
 }
 
 #gif-form {
-  margin: 10px auto;
+  margin: 10px 50px;
 }
 #gif-search {
   width: 30vw;
+}
+
+#gif-button {
+  width: 10vw;
+}
+
+img {
+  max-height: 250px;
 }
 
 header {
@@ -119,14 +127,6 @@ header {
 a {
   text-decoration: none;
   color: black;
-}
-
-.bottom {
-  display: flex;
-}
-
-.comment-count {
-  padding-left: 10px;
 }
 
 #postInteractionBar {
