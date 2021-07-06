@@ -152,3 +152,19 @@ a {
   cursor: pointer;
   /* color: grey; */
 }
+
+.emojis{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emojis i{
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+/* .emojis i:hover{
+  cursor: pointer;
+  color: blue;
+} */

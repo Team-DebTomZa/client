@@ -58,6 +58,7 @@ async function getRandomGif(){
 }
 
 //General
+let journals;
 let form = document.querySelector(".new-post-form");
 let newPostButton = document.querySelector("#newPostButton");
 let cancelButton = document.querySelector("#cancelButton");
@@ -118,12 +119,11 @@ async function getJournalData() {
 
 async function appendBody() {
   journalsContainer.innerHTML = "";
-  let journals = await getJournalData();
+  journals = await getJournalData();
+  journals.reverse(); //so that the latest entries appear at top of page
   journals.forEach((item) => createJournal(item));
   let journalTitles = document.querySelectorAll(".journal-title");
-  journalTitles.forEach((title) =>
-    title.addEventListener("click", redirectToEntryPage)
-  );
+  journalTitles.forEach((title) => title.addEventListener("click", redirectToEntryPage));
 }
 
 function redirectToEntryPage(event) {
@@ -139,13 +139,11 @@ function createJournal(item) {
   let html = `<h2 class="journal-title" id="${item.id}">${item.title}</h2>
  <div id="postInteractionBar">
    <p>${item.date}</p>
-   <p>${item.comments.length}</p>
-   <p>Emoji</p>
+   <p>${item.comments.length} comments</p>
+   <div class="emojis"><div><i class="far fa-smile-beam"></i>${item.emojis[0]}</div><div><i class="far fa-grin-squint-tears"></i>${item.emojis[1]}</div><div><i class="far fa-frown"></i>${item.emojis[2]}</div></div>
  </div>`;
   container.innerHTML = html;
   journalsContainer.appendChild(container);
 }
-
-getJournalData();
 
 appendBody();

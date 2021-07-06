@@ -50,15 +50,14 @@ async function getJournalWithId(id) {
   let journal = responseJson[id - 1];
   document.title = journal.title;
   journalTitle.textContent = journal.title;
-
-  // let journalTitle = document.createElement("h2");
-
-  // journalHolder.appendChild(journalTitle);
-
   journalHolder.innerHTML = journal.content;
-  let gifImage = document.createElement("img");
-  gifImage.setAttribute("src", journal.gifUrl);
-  journalHolder.appendChild(gifImage);
+
+  if (journal.gifUrl){
+    let gifImage = document.createElement('img');
+    gifImage.setAttribute('src', journal.gifUrl);
+    journalHolder.appendChild(gifImage);
+  };
+
   let comments = journal.comments;
   comments.forEach((comment) => createComment(comment));
 }
