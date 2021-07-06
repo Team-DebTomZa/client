@@ -154,5 +154,5 @@ async function sendEmojiUpdate(emojis){
 }
 
 
-
+module.exports = { entry };
 

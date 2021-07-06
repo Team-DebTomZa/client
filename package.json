@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entry.js",
+  "scripts": {
+    "test": "jest --watchALL"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deb0890/client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deb0890/client/issues"
+  },
+  "homepage": "https://github.com/Deb0890/client#readme",
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "jest-fetch-mock": "^3.0.3",
+    "supertest": "^6.1.3"
+  }
+}
