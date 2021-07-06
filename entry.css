@@ -6,20 +6,21 @@
   --backgroundColour: white;
   --journal: rgb(238, 238, 238);
   --border: ;
-  /* --postArea: rgb(196, 84, 84);
-  --newPostForm: rgb(238, 238, 238); */
-}
-
-/* :root {
   --red: #e85a4f;
   --peach: #e98074;
   --dark-grey: #8e8d8a;
   --beige: #d8c3a5;
   --light-grey: #eae7dc;
-} */
+  /* --postArea: rgb(196, 84, 84);
+  --newPostForm: rgb(238, 238, 238); */
+}
 
 header {
   grid-area: head;
+}
+
+h1 span {
+  color: #e85a4f;
 }
 
 main {
@@ -50,7 +51,7 @@ body {
 #postArea {
   background-color: var(--postArea);
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--dark-grey);
   border-radius: 25px;
   text-align: center;
   color: black;
@@ -60,7 +61,7 @@ body {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
-  border: 2px solid grey;
+  border: 2px solid var(--dark-grey);
 }
 
 #addCommentButton {
@@ -76,7 +77,7 @@ body {
   display: block;
   background-color: var(--newPostForm);
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--dark-grey);
   border-radius: 25px;
   color: black;
 }
@@ -200,5 +201,5 @@ pre {
 
 .emojis i:hover{
   cursor: pointer;
-  color: blue;
+  color: var(--red);
 }

@@ -2,13 +2,13 @@
   box-sizing: border-box;
 }
 
-/* :root {
+ :root {
   --red: #e85a4f;
   --peach: #e98074;
   --dark-grey: #8e8d8a;
   --beige: #d8c3a5;
   --light-grey: #eae7dc;
-} */
+}
 
 /* header,
 main,
@@ -19,6 +19,11 @@ footer {
 header {
   grid-area: head;
 }
+
+h1 span {
+  color: #e85a4f;
+}
+
 main {
   grid-area: main;
 }
@@ -147,7 +152,7 @@ a {
   transition: 0.3s;
 }
 .journalContainer:hover {
-  background-color: #3e8e41;
+  background-color: var(--peach);
   color: white;
 }
 
