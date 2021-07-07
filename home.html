@@ -7,22 +7,26 @@
     <link rel="stylesheet" href="Home.css" />
     <link rel="icon" sizes="180x180" href="/favicon/favicon1.ico">
     <script defer src="home.js"></script>
-    <script
-      defer
-      src="https://kit.fontawesome.com/41cdfc15ac.js"
-      crossorigin="anonymous"
-    ></script>
+    <script defer src="https://kit.fontawesome.com/41cdfc15ac.js"crossorigin="anonymous"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <link
-      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"/>
     <title> < /br > </title>
   </head>
   <body>
     <header>
-      <h1> <span> < /br > </span></h1>
-      <p>For those new to tech and just need a <\br ></p>
+      <div>
+        <h1> <span> < /br > </span></h1>
+        <p>For those new to tech and just need a <\br ></p>
+      </div>
+      <form id="sort-form">
+        <label for="sort">Sort results by:</label>
+        <select name="sort" id="sort">
+          <option value="popular">Most popular</option>
+          <option value="date">Date</option>
+          <option value="comments">Most Comments</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
     </header>
 
     <main>
@@ -35,7 +39,7 @@
         </div>
 
         <div class="new-post-form">
-          <form>
+          <form id="journal-form">
             <div>
               <label for="title">Title: </label>
               <input type="text" id="title" />

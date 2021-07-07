@@ -19,6 +19,8 @@
 
 header {
   grid-area: head;
+  display: flex;
+  justify-content: center;
 }
 
 h1 span {
