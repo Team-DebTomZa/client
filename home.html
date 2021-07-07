@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="Home.css" />
     <link rel="icon" sizes="180x180" href="/favicon/favicon1.ico" />
     <script defer src="home.js"></script>
-    <script defer src="https://kit.fontawesome.com/41cdfc15ac.js"crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/41cdfc15ac.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"/>
-    <title> < /br > </title>
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <title>< /br ></title>
   </head>
   <body>
     <header>
       <div>
-        <h1> <span> < /br > </span></h1>
+        <h1><span> < /br > </span></h1>
         <p>For those new to tech and just need a <\br ></p>
       </div>
     </header>
@@ -56,20 +63,26 @@
             </div>
           </form>
         </div>
-        
-        <form id="sort-form">
-        <select name="sort" id="sort">
-          <option value="date">Date</option>
-          <option value="popular">Most popular</option>
-          <option value="comments">Most Comments</option>
-        </select>
-        <input type="submit" value="sort">
-      </form>
 
-      <form id="search-form">
-        <input type="text" placeholder="search me ..." id="search">
-        <input type="submit" value="search">
-      </form>
+        <div id="sortFunctions">
+          <div id="sort-form-container">
+            <form id="sort-form">
+              <select name="sort" id="sort">
+                <option value="date">Date</option>
+                <option value="popular">Most popular</option>
+                <option value="comments">Most Comments</option>
+              </select>
+              <input type="submit" value="sort" />
+            </form>
+          </div>
+
+          <div id="search-form-container">
+            <form id="search-form">
+              <input type="text" placeholder="search me ..." id="search" />
+              <input type="submit" value="search" />
+            </form>
+          </div>
+        </div>
       </section>
 
       <section id="threads">
