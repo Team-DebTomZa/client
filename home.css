@@ -77,6 +77,31 @@ header {
   margin: 0px 20px;
 }
 
+.new-post-section {
+  display: flex;
+  justify-content: space-between;
+}
+#sortFunctions {
+  display: flex;
+  margin: auto 50px;
+}
+
+#sort-form-container,
+#search-form-container {
+  display: flex;
+  width: 15vw;
+}
+
+#sort-form-container form,
+#search-form-container form {
+  width: 15vw;
+}
+
+#sort-form-container form input,
+#search-form-container form input {
+  width: 15vw;
+}
+
 .new-post-bar {
   background-color: var(--newPostBar);
   margin: 30px 50px;
