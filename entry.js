@@ -1,5 +1,3 @@
-//Get Home Button//
-
 let journal;
 
 const homeButton = document.getElementById("homeButton");
@@ -46,7 +44,15 @@ async function postComment(event) {
   );
   const responseJson = await response.json();
   console.log(responseJson);
-  location.reload();
+
+  //update the DOM without reloading
+  const commentsElement = document.getElementById("num-comments");
+  journal.comments.push(event.target.comment.value);
+  commentsElement.textContent = `${journal.comments.length} comments`;
+  commentContainer.innerHTML = '<h2>Comments:</h2>';
+  journal.comments.forEach((comment) => createComment(comment));
+  event.target.comment.value= '';
+
 }
 
 async function getJournalWithId(id) {
@@ -81,8 +87,7 @@ function renderInteractionBar() {
   let numComments = journal.comments.length;
   const commentsElement = document.getElementById("num-comments");
   const dateElement = document.getElementById("date");
-  // const emojiElement = document.getElementById('emojis');
-  // emojiElement.innerHTML = ``
+  
   smileEmoji = document.getElementById("smile");
   smileEmoji.innerHTML += journal.emojis[0];
   smileEmoji.addEventListener("click", () => incrementCount("smile"));
@@ -103,24 +108,30 @@ function renderInteractionBar() {
   }
 }
 
-function incrementCount(emoji) {
-  let regex = /\d+/;
+let hasUserClickedSmile = false;
+let hasUserClickedLaugh = false;
+let hasUserClickedSad = false;
 
-  if (emoji === "smile") {
+function incrementCount(emoji) {
+
+  if (emoji === "smile" && !hasUserClickedSmile) {
+    hasUserClickedSmile = true;
     changeInnerHTML(smileEmoji);
     let emojiArray = journal.emojis;
     emojiArray[0] += 1;
     sendEmojiUpdate(emojiArray);
   }
 
-  if (emoji === "laugh") {
+  if (emoji === "laugh" && !hasUserClickedLaugh) {
+    hasUserClickedLaugh = true;
     changeInnerHTML(laughEmoji);
     let emojiArray = journal.emojis;
     emojiArray[1] += 1;
     sendEmojiUpdate(emojiArray);
   }
 
-  if (emoji === "unhappy") {
+  if (emoji === "unhappy" && !hasUserClickedSad) {
+    hasUserClickedSad = true;
     changeInnerHTML(unhappyEmoji);
     let emojiArray = journal.emojis;
     emojiArray[2] += 1;

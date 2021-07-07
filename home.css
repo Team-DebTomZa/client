@@ -20,6 +20,8 @@
 
 header {
   grid-area: head;
+  display: flex;
+  justify-content: center;
 }
 
 main {
