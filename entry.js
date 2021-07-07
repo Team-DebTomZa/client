@@ -54,11 +54,11 @@ async function getJournalWithId(id) {
   journalTitle.textContent = journal.title;
   journalHolder.innerHTML = journal.content;
 
-  if (journal.gifUrl){
-    let gifImage = document.createElement('img');
-    gifImage.setAttribute('src', journal.gifUrl);
+  if (journal.gifUrl) {
+    let gifImage = document.createElement("img");
+    gifImage.setAttribute("src", journal.gifUrl);
     journalHolder.appendChild(gifImage);
-  };
+  }
 
   let comments = journal.comments;
   comments.forEach((comment) => createComment(comment));
@@ -73,69 +73,72 @@ function createComment(comment) {
 
 let smileEmoji, laughEmoji, unhappyEmoji;
 
-function renderInteractionBar(){
+function renderInteractionBar() {
   let numComments = journal.comments.length;
-  const commentsElement = document.getElementById('num-comments');
-  const dateElement = document.getElementById('date');
+  const commentsElement = document.getElementById("num-comments");
+  const dateElement = document.getElementById("date");
   // const emojiElement = document.getElementById('emojis');
   // emojiElement.innerHTML = ``
-  smileEmoji = document.getElementById('smile');
+  smileEmoji = document.getElementById("smile");
   smileEmoji.innerHTML += journal.emojis[0];
-  smileEmoji.addEventListener('click', () => incrementCount('smile'))
+  smileEmoji.addEventListener("click", () => incrementCount("smile"));
 
-  laughEmoji = document.getElementById('laugh');
+  laughEmoji = document.getElementById("laugh");
   laughEmoji.innerHTML += journal.emojis[1];
-  laughEmoji.addEventListener('click', () => incrementCount('laugh'))
+  laughEmoji.addEventListener("click", () => incrementCount("laugh"));
 
-  unhappyEmoji = document.getElementById('unhappy');
+  unhappyEmoji = document.getElementById("unhappy");
   unhappyEmoji.innerHTML += journal.emojis[2];
-  unhappyEmoji.addEventListener('click', () => incrementCount('unhappy'));
+  unhappyEmoji.addEventListener("click", () => incrementCount("unhappy"));
 
   dateElement.textContent = journal.date;
-  if (numComments === 1){
+  if (numComments === 1) {
     commentsElement.textContent = `${numComments} comment`;
   } else {
     commentsElement.textContent = `${numComments} comments`;
   }
 }
 
-function incrementCount(emoji){
+function incrementCount(emoji) {
   let regex = /\d+/;
 
-  if (emoji === 'smile'){
+  if (emoji === "smile") {
     changeInnerHTML(smileEmoji);
     let emojiArray = journal.emojis;
     emojiArray[0] += 1;
-    sendEmojiUpdate(emojiArray)
+    sendEmojiUpdate(emojiArray);
   }
 
-  if (emoji === 'laugh'){
+  if (emoji === "laugh") {
     changeInnerHTML(laughEmoji);
     let emojiArray = journal.emojis;
     emojiArray[1] += 1;
-    sendEmojiUpdate(emojiArray)
+    sendEmojiUpdate(emojiArray);
   }
 
-  if (emoji === 'unhappy'){
+  if (emoji === "unhappy") {
     changeInnerHTML(unhappyEmoji);
     let emojiArray = journal.emojis;
     emojiArray[2] += 1;
-    sendEmojiUpdate(emojiArray)
+    sendEmojiUpdate(emojiArray);
   }
 }
 
-function changeInnerHTML(emojiElement){
+function changeInnerHTML(emojiElement) {
   let regex = /\d+/;
   let numStr = emojiElement.innerHTML.match(regex)[0];
   let digits = numStr.length;
   let num = parseInt(numStr);
-  emojiElement.innerHTML = emojiElement.innerHTML.slice(0, emojiElement.innerHTML.length - digits - 1);
-  emojiElement.innerHTML += String(num + 1 );
+  emojiElement.innerHTML = emojiElement.innerHTML.slice(
+    0,
+    emojiElement.innerHTML.length - digits - 1
+  );
+  emojiElement.innerHTML += String(num + 1);
 }
 
-async function sendEmojiUpdate(emojis){
+async function sendEmojiUpdate(emojis) {
   let data = {
-    emojis
+    emojis,
   };
   const options = {
     method: "PATCH",
@@ -152,7 +155,3 @@ async function sendEmojiUpdate(emojis){
   const responseJson = await response.json();
   console.log(responseJson);
 }
-
-
-module.exports = { entry };
-
