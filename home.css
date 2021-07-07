@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   margin: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 15vh 1fr 10vh;
+  grid-template-rows: 20vh 1fr 10vh;
   grid-template-areas:
     "head"
     "main"
@@ -47,12 +47,16 @@ header {
   text-align: center;
   background-color: var(--header);
   color: white;
-}
-h1 span {
-  color: #e85a4f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-main {
+#headerContent {
+  margin: auto;
+}
+
+#header main {
   margin-bottom: 20px;
 }
 
