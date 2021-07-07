@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="entry.css" />
-    <link rel="icon" sizes="180x180" href="/favicon/favicon1.ico">
+    <link rel="icon" sizes="180x180" href="/favicon/favicon1.ico" />
     <script
       defer
       src="https://kit.fontawesome.com/41cdfc15ac.js"
@@ -21,10 +21,17 @@
   </head>
   <body>
     <header>
-      <h1 id="homeButton"> <span> < /br > </span></h1>
-      <p>For those new to tech and just need a < /br > </p>
+      <h1 id="homeButton"><span> < /br > </span></h1>
+      <p>For those new to tech and just need a < /br ></p>
     </header>
     <main>
+      <nav id="navBar">
+        <i class="fas fa-home" id="homeButtonNav"></i>
+        <p>Home</p>
+        <i class="fas fa-chevron-right"></i>
+        <p id="journalTitleNav"></p>
+      </nav>
+
       <div id="journalContainer">
         <h2 id="journalTitle"></h2>
         <div id="journal"></div>
@@ -39,12 +46,15 @@
         </div>
       </div>
 
-      <div id="comments-container"><h2>Comments:</h2></div>
-      <form id="comment-form">
-        <label for="comment">Add a comment: </label>
-        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-        <input id="submitFormButton" type="submit" value="Add comment!" />
-      </form>
+      <section class="comments">
+        <div id="comments-container"><h2>Comments:</h2></div>
+        <form id="comment-form">
+          <label for="comment">Add a comment: </label>
+          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+          <input id="submitFormButton" type="submit" value="Add comment!" />
+        </form>
+      </section>
     </main>
   </body>
 </html>
+
