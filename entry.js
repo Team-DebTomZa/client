@@ -43,7 +43,15 @@ async function postComment(event) {
   );
   const responseJson = await response.json();
   console.log(responseJson);
-  location.reload();
+
+  //update the DOM without reloading
+  const commentsElement = document.getElementById("num-comments");
+  journal.comments.push(event.target.comment.value);
+  commentsElement.textContent = `${journal.comments.length} comments`;
+  commentContainer.innerHTML = '<h2>Comments:</h2>';
+  journal.comments.forEach((comment) => createComment(comment));
+  event.target.comment.value= '';
+
 }
 
 async function getJournalWithId(id) {
@@ -77,8 +85,7 @@ function renderInteractionBar() {
   let numComments = journal.comments.length;
   const commentsElement = document.getElementById("num-comments");
   const dateElement = document.getElementById("date");
-  // const emojiElement = document.getElementById('emojis');
-  // emojiElement.innerHTML = ``
+  
   smileEmoji = document.getElementById("smile");
   smileEmoji.innerHTML += journal.emojis[0];
   smileEmoji.addEventListener("click", () => incrementCount("smile"));
