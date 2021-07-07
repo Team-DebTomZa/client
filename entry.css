@@ -5,9 +5,7 @@
 :root {
   --backgroundColour: white;
   --journal: rgb(238, 238, 238);
-  --border: ;
-  /* --postArea: rgb(196, 84, 84);
-  --newPostForm: rgb(238, 238, 238); */
+  --border: grey;
 }
 
 header {
@@ -35,116 +33,34 @@ body {
   background-color: var(--backgroundColour);
 }
 
-#homeButton:hover {
-  cursor: pointer;
-}
-
-#postArea {
-  background-color: var(--postArea);
-  margin: 50px;
-  border: 2px solid grey;
-  border-radius: 25px;
-  text-align: center;
-  color: black;
-}
-
-#postInteraction {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid grey;
-}
-
-#addCommentButton {
-  width: 12%;
-  margin: auto 0px;
-}
-
-.new-post {
-  margin: 10px;
-}
-
-.new-post-form {
-  display: block;
-  background-color: var(--newPostForm);
-  margin: 50px;
-  border: 2px solid grey;
-  border-radius: 25px;
-  color: black;
-}
-
-input {
-  height: 20px;
-  width: 40vw;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  margin: 50 auto;
-  padding: 5px;
-  text-align: center;
-}
-
-.postButtons {
-  margin: 10px 30%;
-}
-
-#submitButton {
-  width: 40%;
-  position: relative;
-}
-button {
-  width: 40%;
-  position: relative;
-}
-
-.ql-snow {
-  width: 50%;
-  margin: 20px auto 0 auto;
-  background-color: white;
-}
-
-#editor {
-  margin: auto;
-  height: 100px;
-}
-
 header {
   text-align: center;
 }
 
-.bottom {
-  display: flex;
+#homeButton:hover {
+  cursor: pointer;
 }
 
-.comment-count {
-  padding-left: 10px;
-}
-
-pre {
-  padding: 10px !important;
-  padding-left: 20px !important;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border-radius: 3px;
-}
 #journalContainer {
   height: auto;
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--border);
   background-color: var(--journal);
   border-radius: 15px;
+}
+#journalTitle {
+  margin: 20px 30px;
 }
 
 #journal {
   height: auto;
+  margin: 0px 30px;
+  padding: 0;
 }
 
 #journal img {
   display: block;
-  max-height: 300px;
+  max-height: 250px;
   margin: 10px auto;
   text-align: center;
 }
@@ -152,7 +68,27 @@ pre {
 #interaction-bar {
   display: flex;
   justify-content: space-between;
-  margin: 10px 50px 20px 50px;
+  margin: 10px 30px 20px 30px;
+}
+
+#num-comments {
+  padding-left: 10vw;
+}
+
+.emojis {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emojis i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.emojis i:hover {
+  cursor: pointer;
+  color: blue;
 }
 
 #comments-container {
@@ -163,7 +99,7 @@ pre {
 #comments-container div {
   padding-top: 15px;
   padding-bottom: 15px;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid var(--border);
 }
 
 #comment-form {
@@ -177,20 +113,4 @@ pre {
 #submitFormButton {
   width: 10vw;
   margin: 0 auto;
-}
-
-.emojis{
-  width: 20%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.emojis i{
-  font-size: 20px;
-  margin-right: 5px;
-}
-
-.emojis i:hover{
-  cursor: pointer;
-  color: blue;
 }
