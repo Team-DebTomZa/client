@@ -61,6 +61,11 @@ main {
   border-radius: 5px;
   background-color: rgb(225, 229, 235);
   padding: 5px;
+  display: flex;
+}
+
+.fa-home {
+  margin-left: 10px;
 }
 #navBar p {
   margin: 0px 20px;
