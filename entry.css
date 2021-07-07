@@ -6,12 +6,20 @@
   --backgroundColour: white;
   --journal: rgb(238, 238, 238);
   --border: ;
-  /* --postArea: rgb(196, 84, 84);
-  --newPostForm: rgb(238, 238, 238); */
+  --red: #e85a4f;
+  --peach: #e98074;
+  --dark-grey: #8e8d8a;
+  --beige: #d8c3a5;
+  --light-grey: #eae7dc;
+  --border: grey;
 }
 
 header {
   grid-area: head;
+}
+
+h1 span {
+  color: #e85a4f;
 }
 
 main {
@@ -42,7 +50,7 @@ body {
 #postArea {
   background-color: var(--postArea);
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--dark-grey);
   border-radius: 25px;
   text-align: center;
   color: black;
@@ -52,7 +60,7 @@ body {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
-  border: 2px solid grey;
+  border: 2px solid var(--dark-grey);
 }
 
 #addCommentButton {
@@ -68,7 +76,7 @@ body {
   display: block;
   background-color: var(--newPostForm);
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--dark-grey);
   border-radius: 25px;
   color: black;
 }
@@ -115,36 +123,30 @@ header {
   text-align: center;
 }
 
-.bottom {
-  display: flex;
+#homeButton:hover {
+  cursor: pointer;
 }
 
-.comment-count {
-  padding-left: 10px;
-}
-
-pre {
-  padding: 10px !important;
-  padding-left: 20px !important;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border-radius: 3px;
-}
 #journalContainer {
   height: auto;
   margin: 50px;
-  border: 2px solid grey;
+  border: 2px solid var(--border);
   background-color: var(--journal);
   border-radius: 15px;
+}
+#journalTitle {
+  margin: 20px 30px;
 }
 
 #journal {
   height: auto;
+  margin: 0px 30px;
+  padding: 0;
 }
 
 #journal img {
   display: block;
-  max-height: 300px;
+  max-height: 250px;
   margin: 10px auto;
   text-align: center;
 }
@@ -152,7 +154,27 @@ pre {
 #interaction-bar {
   display: flex;
   justify-content: space-between;
-  margin: 10px 50px 20px 50px;
+  margin: 10px 30px 20px 30px;
+}
+
+#num-comments {
+  padding-left: 10vw;
+}
+
+.emojis {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emojis i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.emojis i:hover {
+  cursor: pointer;
+  color: blue;
 }
 
 #comments-container {
@@ -163,7 +185,7 @@ pre {
 #comments-container div {
   padding-top: 15px;
   padding-bottom: 15px;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid var(--border);
 }
 
 #comment-form {
@@ -192,5 +214,5 @@ pre {
 
 .emojis i:hover{
   cursor: pointer;
-  color: blue;
+  color: var(--red);
 }
