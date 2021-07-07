@@ -20,19 +20,19 @@ Journal website, client repository.
 
 ### home.html & entry.html
 
-[x] Build basic skeleton.
-[x] Link to stylesheet
-[x] Add favicon
+- [x] Build basic skeleton
+- [x] Link to stylesheet
+- [x] Add favicon
 
 ### home.css & entry.css
 
-[x] General page layout
-[x] Use variables to apply colour scheme
+- [x] General page layout
+- [x] Use variables to apply colour scheme
 
 ### home.js & entry.js
 
-[x] Add event listeners
-[x] Use fetch for requests to the server
+- [x] Add event listeners
+- [x] Use fetch for requests to the server
 
 ## Bugs
 
