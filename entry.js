@@ -1,5 +1,3 @@
-//Get Home Button//
-
 let journal;
 
 const homeButton = document.getElementById("homeButton");
