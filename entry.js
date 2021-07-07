@@ -1,10 +1,13 @@
 let journal;
 
 const homeButton = document.getElementById("homeButton");
+const homeButtonNav = document.getElementById("homeButtonNav");
 
 const journalTitle = document.getElementById("journalTitle");
+let journalTitleNav = document.getElementById("journalTitleNav");
 
 homeButton.addEventListener("click", goHome);
+homeButtonNav.addEventListener("click", goHome);
 
 function goHome() {
   console.log("clicked");
@@ -59,6 +62,7 @@ async function getJournalWithId(id) {
   document.title = journal.title;
   journalTitle.textContent = journal.title;
   journalHolder.innerHTML = journal.content;
+  journalTitleNav.textContent = journal.title;
 
   if (journal.gifUrl) {
     let gifImage = document.createElement("img");

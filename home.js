@@ -16,9 +16,8 @@ const quill = new Quill("#editor", {
 });
 
 const charLimit = 400;
-const limitSpan = document.getElementById('limit-span');
+const limitSpan = document.getElementById("limit-span");
 let isAllowedToPost = true;
-
 
 quill.on("text-change", function (delta, old, source) {
   let numChars = quill.getLength();
@@ -32,28 +31,29 @@ quill.on("text-change", function (delta, old, source) {
   }
 });
 
-
 //GIPHY
 let gifUrl = null;
-const gifButton = document.getElementById('gif-button');
-const gifImage = document.getElementById('gif');
-const gifSearch = document.getElementById('gif-search');
-gifButton.addEventListener('click', getRandomGif);
+const gifButton = document.getElementById("gif-button");
+const gifImage = document.getElementById("gif");
+const gifSearch = document.getElementById("gif-search");
+gifButton.addEventListener("click", getRandomGif);
 
-async function getRandomGif(){
-  const apiKey = 'aP42zy1oVEY3C3zd7GvNdaIp7sEcMsDi';
-  const url = new URL("https://api.giphy.com/v1/gifs/random")
+async function getRandomGif() {
+  const apiKey = "aP42zy1oVEY3C3zd7GvNdaIp7sEcMsDi";
+  const url = new URL("https://api.giphy.com/v1/gifs/random");
   const searchTerm = gifSearch.value;
   const params = {
     apiKey,
-    tag: searchTerm
-  }
-  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+    tag: searchTerm,
+  };
+  Object.keys(params).forEach((key) =>
+    url.searchParams.append(key, params[key])
+  );
 
   const response = await fetch(url);
   const responseJson = await response.json();
   gifUrl = responseJson.data.image_url;
-  gifImage.setAttribute('src', gifUrl);
+  gifImage.setAttribute("src", gifUrl);
   console.log(responseJson);
 }
 
@@ -90,7 +90,7 @@ async function sendForm(event) {
   let data = {
     title: event.target.title.value,
     content: quill.root.innerHTML,
-    gifUrl
+    gifUrl,
   };
   const options = {
     method: "POST",
@@ -123,7 +123,9 @@ async function appendBody() {
   journals.reverse(); //so that the latest entries appear at top of page
   journals.forEach((item) => createJournal(item));
   let journalTitles = document.querySelectorAll(".journal-title");
-  journalTitles.forEach((title) => title.addEventListener("click", redirectToEntryPage));
+  journalTitles.forEach((title) =>
+    title.addEventListener("click", redirectToEntryPage)
+  );
 }
 
 function redirectToEntryPage(event) {
