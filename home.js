@@ -174,4 +174,18 @@ function addJournalsToPage(results){
   journalTitles.forEach((title) => title.addEventListener("click", redirectToEntryPage));
 }
 
+//search functionality
+
+const searchForm = document.getElementById('search-form');
+searchForm.addEventListener('submit', filterResults);
+
+function filterResults(event){
+  event.preventDefault();
+  let search = event.target.search.value.toLowerCase();
+  console.log(search)
+  let results = [...journals]; //dont want to change the journals results so create new identical array
+  results = results.filter(entry => entry.title.toLowerCase().includes(search));
+  addJournalsToPage(results);
+}
+
 appendBody();
