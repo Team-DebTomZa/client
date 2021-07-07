@@ -104,7 +104,6 @@ let hasUserClickedLaugh = false;
 let hasUserClickedSad = false;
 
 function incrementCount(emoji) {
-  let regex = /\d+/;
 
   if (emoji === "smile" && !hasUserClickedSmile) {
     hasUserClickedSmile = true;
