@@ -99,24 +99,31 @@ function renderInteractionBar() {
   }
 }
 
+let hasUserClickedSmile = false;
+let hasUserClickedLaugh = false;
+let hasUserClickedSad = false;
+
 function incrementCount(emoji) {
   let regex = /\d+/;
 
-  if (emoji === "smile") {
+  if (emoji === "smile" && !hasUserClickedSmile) {
+    hasUserClickedSmile = true;
     changeInnerHTML(smileEmoji);
     let emojiArray = journal.emojis;
     emojiArray[0] += 1;
     sendEmojiUpdate(emojiArray);
   }
 
-  if (emoji === "laugh") {
+  if (emoji === "laugh" && !hasUserClickedLaugh) {
+    hasUserClickedLaugh = true;
     changeInnerHTML(laughEmoji);
     let emojiArray = journal.emojis;
     emojiArray[1] += 1;
     sendEmojiUpdate(emojiArray);
   }
 
-  if (emoji === "unhappy") {
+  if (emoji === "unhappy" && !hasUserClickedSad) {
+    hasUserClickedSad = true;
     changeInnerHTML(unhappyEmoji);
     let emojiArray = journal.emojis;
     emojiArray[2] += 1;
