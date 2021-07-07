@@ -5,11 +5,21 @@
 :root {
   --backgroundColour: white;
   --journal: rgb(238, 238, 238);
+  --border: ;
+  --red: #e85a4f;
+  --peach: #e98074;
+  --dark-grey: #8e8d8a;
+  --beige: #d8c3a5;
+  --light-grey: #eae7dc;
   --border: grey;
 }
 
 header {
   grid-area: head;
+}
+
+h1 span {
+  color: #e85a4f;
 }
 
 main {
@@ -31,6 +41,82 @@ body {
     "foot";
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--backgroundColour);
+}
+
+#homeButton:hover {
+  cursor: pointer;
+}
+
+#postArea {
+  background-color: var(--postArea);
+  margin: 50px;
+  border: 2px solid var(--dark-grey);
+  border-radius: 25px;
+  text-align: center;
+  color: black;
+}
+
+#postInteraction {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid var(--dark-grey);
+}
+
+#addCommentButton {
+  width: 12%;
+  margin: auto 0px;
+}
+
+.new-post {
+  margin: 10px;
+}
+
+.new-post-form {
+  display: block;
+  background-color: var(--newPostForm);
+  margin: 50px;
+  border: 2px solid var(--dark-grey);
+  border-radius: 25px;
+  color: black;
+}
+
+input {
+  height: 20px;
+  width: 40vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin: 50 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.postButtons {
+  margin: 10px 30%;
+}
+
+#submitButton {
+  width: 40%;
+  position: relative;
+}
+button {
+  width: 40%;
+  position: relative;
+}
+
+.ql-snow {
+  width: 50%;
+  margin: 20px auto 0 auto;
+  background-color: white;
+}
+
+#editor {
+  margin: auto;
+  height: 100px;
 }
 
 header {
@@ -113,4 +199,20 @@ header {
 #submitFormButton {
   width: 10vw;
   margin: 0 auto;
+}
+
+.emojis{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emojis i{
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.emojis i:hover{
+  cursor: pointer;
+  color: var(--red);
 }
