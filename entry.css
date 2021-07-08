@@ -37,7 +37,7 @@ body {
     "head"
     "main"
     "foot";
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
   background-color: var(--backgroundColour);
 }
 

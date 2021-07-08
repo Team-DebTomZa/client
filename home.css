@@ -20,6 +20,11 @@
 
 header {
   grid-area: head;
+
+}
+
+ h1 {
+  color: #e85a4f;
   display: flex;
   justify-content: center;
 }
@@ -41,10 +46,11 @@ body {
     "head"
     "main"
     "foot";
-  font-family: Helvetica, monospace;
+    font-family: 'Ubuntu', sans-serif;  
   background-color: var(--backgroundColour);
   color: var(--textColor);
 }
+
 header {
   text-align: center;
   background-color: var(--header);
