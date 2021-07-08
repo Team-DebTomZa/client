@@ -3,13 +3,14 @@
 }
 
 :root {
-  --backgroundColour: white;
-  --textColor: black;
+  --backgroundColour: rgb(236, 240, 241);
+  --textColor: grey;
   --border: grey;
+  --header: rgb(45, 190, 184);
   --newPostBar: rgb(175, 175, 175);
   --newPostForm: rgb(238, 238, 238);
-  --journalContainer: rgb(238, 238, 238);
-  --journalContainerHover: #3e8e41;
+  --journalContainer: white;
+  --journalContainerHover: rgb(238, 238, 238);
   --red: #e85a4f;
   --peach: #e98074;
   --dark-grey: #8e8d8a;
@@ -19,10 +20,13 @@
 
 header {
   grid-area: head;
+
 }
 
-h1 {
+ h1 {
   color: #e85a4f;
+  display: flex;
+  justify-content: center;
 }
 
 main {
@@ -37,34 +41,92 @@ body {
   min-height: 100vh;
   margin: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 15vh 1fr 10vh;
+  grid-template-rows: 20vh 1fr 10vh;
   grid-template-areas:
     "head"
     "main"
     "foot";
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;  
   background-color: var(--backgroundColour);
   color: var(--textColor);
 }
-main {
+
+header {
+  text-align: center;
+  background-color: var(--header);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#headerContent {
+  margin: auto;
+}
+
+#header main {
   margin-bottom: 20px;
+}
+
+#navBar {
+  margin: 10px 50px;
+  border-radius: 5px;
+  background-color: rgb(225, 229, 235);
+  padding: 5px;
+  display: flex;
+}
+
+.fa-home {
+  margin-left: 10px;
+}
+#navBar p {
+  margin: 0px 20px;
+}
+
+.new-post-section {
+  display: flex;
+  justify-content: space-between;
+}
+#sortFunctions {
+  display: flex;
+  margin: auto 50px;
+}
+
+#sort-form-container,
+#search-form-container {
+  display: flex;
+  width: 15vw;
+}
+
+#sort-form-container form,
+#search-form-container form {
+  width: 15vw;
+}
+
+#sort-form-container form input,
+#search-form-container form input {
+  width: 15vw;
 }
 
 .new-post-bar {
   background-color: var(--newPostBar);
-  margin: 50px;
+  margin: 30px 50px;
+  width: 15vh;
   border: 2px solid var(--border);
   border-radius: 15px;
-  text-align: center;
   color: white;
 }
-
-#newPostButton:hover {
-  cursor: pointer;
+.new-post {
+  display: flex;
+  justify-content: space-evenly;
+  margin: -5px 5px;
 }
 
-.new-post {
-  margin: 10px;
+#newPostButton {
+  margin: auto auto auto 10px;
+}
+#newPostButton:hover {
+  cursor: pointer;
 }
 
 .new-post-form {
@@ -130,10 +192,6 @@ img {
   max-height: 250px;
 }
 
-header {
-  text-align: center;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -145,6 +203,11 @@ a {
   margin: 0px 30px;
 }
 
+#journals h2 {
+  font-size: 1.3em;
+  margin: 10px 30px 0px 30px;
+  color: rgb(236, 117, 94);
+}
 .journalContainer {
   display: block;
   background-color: var(--journalContainer);
@@ -154,10 +217,11 @@ a {
   color: var(--textColor);
   transition: 0.3s;
 }
+
 .journalContainer:hover {
   /*background-color: var(--peach);*/
   background-color: var(--journalContainerHover);
-  color: white;
+  /* color: white; */
 }
 
 .journal-title {
@@ -169,10 +233,24 @@ a {
   cursor: pointer;
 }
 
+#threads {
+  margin: 0px 50px;
+  background-color: rgb(38, 188, 181);
+  color: white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#threads h2 {
+  margin: 0px 30px;
+  padding: 5px 0px;
+}
+
 .emojis {
   width: 20%;
   display: flex;
   justify-content: space-between;
+  margin: auto 0px;
 }
 
 .emojis i {

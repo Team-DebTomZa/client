@@ -24,10 +24,18 @@
   </head>
   <body>
     <header>
-      <h1 id="homeButton"> < /br ></h1>
-      <p>For those new to tech and just need a < /br > </p>
+      <h1 id="homeButton"> < br > </h1>
+      <p>For those new to tech and just need a < br > </p>
+
     </header>
     <main>
+      <nav id="navBar">
+        <i class="fas fa-home" id="homeButtonNav"></i>
+        <p>Home</p>
+        <i class="fas fa-chevron-right"></i>
+        <p id="journalTitleNav"></p>
+      </nav>
+
       <div id="journalContainer">
         <h2 id="journalTitle"></h2>
         <div id="journal"></div>
@@ -42,12 +50,15 @@
         </div>
       </div>
 
-      <div id="comments-container"><h2>Comments:</h2></div>
-      <form id="comment-form">
-        <label for="comment">Add a comment: </label>
-        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-        <input id="submitFormButton" type="submit" value="Add comment!" />
-      </form>
+      <section class="comments">
+        <div id="comments-container"><h2>Comments:</h2></div>
+        <form id="comment-form">
+          <label for="comment">Add a comment: </label>
+          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+          <input id="submitFormButton" type="submit" value="Add comment!" />
+        </form>
+      </section>
     </main>
   </body>
 </html>
+

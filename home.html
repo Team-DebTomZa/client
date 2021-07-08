@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" sizes="180x180" href="/favicon/favicon.ico">
+
     <script defer src="home.js"></script>
     <script
       defer
@@ -20,44 +21,74 @@
       href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
       rel="stylesheet"
     />
-    <title> < /br > </title>
+    <title>< /br ></title>
   </head>
   <body>
     <header>
-      <h1> < /br > </h1>
-      <p>For those new to tech and just need a <\br ></p>
+      <h1> < br > </h1>
+      <p>For those new to tech and just need a < br ></p>
     </header>
 
     <main>
+      <nav id="navBar">
+        <i class="fas fa-home"></i>
+        <p>Home</p>
+        <i class="fas fa-chevron-right"></i>
+      </nav>
+
       <section class="new-post-section">
         <div class="new-post-bar">
           <div class="new-post">
-            <h2>New Post</h2>
-            <i id="newPostButton" class="fas fa-plus-circle fa-3x"></i>
+            <p>New Post</p>
+            <i id="newPostButton" class="fas fa-plus-circle"></i>
           </div>
         </div>
 
-        <div class="new-post-form">
-          <form>
-            <div>
-              <label for="title">Title: </label>
-              <input type="text" id="title" />
-            </div>
-            <div id="editor"></div>
-            <span id="limit-span">Character Limit: </span>
-            <div id="gif-form">
-              <input type="text" id="gif-search" />
-              <button type="button" id="gif-button">Add Gif</button>
-            </div>
-            <div id="gif-container">
-              <img src="" id="gif" />
-            </div>
-            <div class="postButtons">
-              <input id="submitButton" type="submit" value="Submit Post" />
-              <button type="button" id="cancelButton">Cancel</button>
-            </div>
-          </form>
+        <div id="sortFunctions">
+          <div id="sort-form-container">
+            <form id="sort-form">
+              <select name="sort" id="sort">
+                <option value="date">Date</option>
+                <option value="popular">Most popular</option>
+                <option value="comments">Most Comments</option>
+              </select>
+              <input type="submit" value="sort" />
+            </form>
+          </div>
+
+          <div id="search-form-container">
+            <form id="search-form">
+              <input type="text" placeholder="search me ..." id="search" />
+              <input type="submit" value="search" />
+            </form>
+          </div>
         </div>
+      </section>
+
+      <div class="new-post-form">
+        <form id="journal-form">
+          <div>
+            <label for="title">Title: </label>
+            <input type="text" id="title" />
+          </div>
+          <div id="editor"></div>
+          <span id="limit-span">Character Limit: </span>
+          <div id="gif-form">
+            <input type="text" id="gif-search" placeholder="gif keyword" />
+            <button type="button" id="gif-button">Add Gif</button>
+          </div>
+          <div id="gif-container">
+            <img src="" id="gif" />
+          </div>
+          <div class="postButtons">
+            <input id="submitButton" type="submit" value="Submit Post" />
+            <button type="button" id="cancelButton">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <section id="threads">
+        <h2>Threads</h2>
       </section>
 
       <section id="journals"></section>
