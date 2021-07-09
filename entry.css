@@ -194,4 +194,7 @@ pre {
   #num-comments {
     padding-left: 5vw;
   }
+  #submitFormButton {
+    width: auto;
+  }
 }
