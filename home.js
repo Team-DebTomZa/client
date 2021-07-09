@@ -60,7 +60,7 @@ async function getRandomGif() {
 //General
 let journals;
 let form = document.querySelector(".new-post-form");
-let newPostButton = document.querySelector(".new-post-section");
+let newPostButton = document.querySelector(".new-post-bar");
 let cancelButton = document.querySelector("#cancelButton");
 let submitForm = document.getElementById("journal-form");
 
