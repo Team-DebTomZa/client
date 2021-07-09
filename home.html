@@ -47,8 +47,6 @@
           </div>
         </div>
 
-        <!-- <span><a href="#"></a></span> -->
-
         <div id="sortFunctions">
           <div id="sort-form-container">
             <form id="sort-form">
@@ -57,14 +55,14 @@
                 <option value="popular">Most popular</option>
                 <option value="comments">Most Comments</option>
               </select>
-              <input type="submit" value="Sort" />
+              <input type="submit" value="Sort" class="button" />
             </form>
           </div>
 
           <div id="search-form-container">
             <form id="search-form">
               <input type="text" placeholder="Search me ..." id="search" />
-              <input type="submit" value="Search" />
+              <input type="submit" value="Search" class="button" />
             </form>
           </div>
         </div>
@@ -80,14 +78,23 @@
           <span id="limit-span">Character Limit: </span>
           <div id="gif-form">
             <input type="text" id="gif-search" placeholder="gif keyword" />
-            <button type="button" id="gif-button">Add Gif</button>
+            <button type="button" id="gif-button" class="button">
+              Add Gif
+            </button>
           </div>
           <div id="gif-container">
             <img src="" id="gif" />
           </div>
           <div class="postButtons">
-            <input id="submitButton" type="submit" value="Submit Post" />
-            <button type="button" id="cancelButton">Cancel</button>
+            <input
+              id="submitButton"
+              type="submit"
+              value="Submit Post"
+              class="button"
+            />
+            <button type="button" id="cancelButton" class="button">
+              Cancel
+            </button>
           </div>
         </form>
       </div>
