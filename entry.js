@@ -2,12 +2,14 @@ let journal;
 
 const homeButton = document.getElementById("homeButton");
 const homeButtonNav = document.getElementById("homeButtonNav");
+const homeButtonText = document.getElementById("homeButtonText");
 
 const journalTitle = document.getElementById("journalTitle");
 let journalTitleNav = document.getElementById("journalTitleNav");
 
 homeButton.addEventListener("click", goHome);
 homeButtonNav.addEventListener("click", goHome);
+homeButtonText.addEventListener("click", goHome);
 
 function goHome() {
   console.log("clicked");
@@ -49,10 +51,9 @@ async function postComment(event) {
   const commentsElement = document.getElementById("num-comments");
   journal.comments.push(event.target.comment.value);
   commentsElement.textContent = `${journal.comments.length} comments`;
-  commentContainer.innerHTML = '<h2>Comments:</h2>';
+  commentContainer.innerHTML = "<h2>Comments:</h2>";
   journal.comments.forEach((comment) => createComment(comment));
-  event.target.comment.value= '';
-
+  event.target.comment.value = "";
 }
 
 async function getJournalWithId(id) {
@@ -87,7 +88,7 @@ function renderInteractionBar() {
   let numComments = journal.comments.length;
   const commentsElement = document.getElementById("num-comments");
   const dateElement = document.getElementById("date");
-  
+
   smileEmoji = document.getElementById("smile");
   smileEmoji.innerHTML += journal.emojis[0];
   smileEmoji.addEventListener("click", () => incrementCount("smile"));
@@ -113,7 +114,6 @@ let hasUserClickedLaugh = false;
 let hasUserClickedSad = false;
 
 function incrementCount(emoji) {
-
   if (emoji === "smile" && !hasUserClickedSmile) {
     hasUserClickedSmile = true;
     changeInnerHTML(smileEmoji);

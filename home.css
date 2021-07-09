@@ -77,6 +77,11 @@ header {
   justify-content: space-between;
 }
 
+.new-post-bar:hover {
+  cursor: pointer;
+  background-color: rgb(236, 117, 94);
+}
+
 .new-post-bar {
   background-color: var(--newPostBar);
   margin: 30px 50px;
@@ -98,6 +103,17 @@ header {
   margin: auto;
 }
 #newPostButton:hover {
+  cursor: pointer;
+}
+
+.button {
+  background-color: var(--newPostBar);
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  height: auto;
+}
+.button:hover {
+  background-color: rgb(236, 117, 94);
   cursor: pointer;
 }
 
@@ -251,11 +267,34 @@ a {
 @media only screen and (max-width: 600px) {
   #threads,
   .journalContainer,
-  #sortFunction,
+  #sortFunctions,
   .new-post-form,
   #navBar,
   .new-post-bar {
     margin-left: 20px;
     margin-right: 20px;
+  }
+  #sort-form,
+  #search-form {
+    display: flex;
+    flex-direction: column;
+  }
+  #sort-form-container form input,
+  #search-form-container form input,
+  #sort-form-container form select {
+    width: auto;
+  }
+  .new-post-bar {
+    width: 20vw;
+  }
+  #journals h2,
+  .journal-title,
+  #threads h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #postInteractionBar {
+    margin-left: 10px;
+    margin-right: 30px;
   }
 }
