@@ -179,3 +179,15 @@ pre {
   padding-left: 20px !important;
   border-radius: 3px;
 }
+
+@media only screen and (max-width: 600px) {
+  #journalContainer,
+  .comments,
+  #navBar {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #num-comments {
+    padding-left: 5vw;
+  }
+}
