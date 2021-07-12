@@ -14,6 +14,7 @@
   --beige: #d8c3a5;
   --light-grey: #eae7dc;
   --border: grey;
+  --newPostBar: rgb(175, 175, 175);
 }
 
 header {
@@ -37,16 +38,15 @@ body {
     "head"
     "main"
     "foot";
-    font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   background-color: var(--backgroundColour);
+  color: var(--textColor);
 }
 
 #homeButton:hover,
-#homeButtonNav:hover {
+#homeButtonNav:hover,
+#homeButtonText:hover {
   cursor: pointer;
-}
-#homeButtonNav:hover {
-  color: grey;
 }
 
 header {
@@ -55,7 +55,7 @@ header {
   color: white;
 }
 #navBar {
-  margin: 10px 50px;
+  margin: 20px 50px;
   border-radius: 5px;
   background-color: rgb(225, 229, 235);
   padding: 5px;
@@ -71,7 +71,7 @@ header {
 
 #journalContainer {
   height: auto;
-  margin: 50px;
+  margin: 30px 50px;
   border: 2px solid var(--border);
   background-color: white;
   border-radius: 15px;
@@ -145,6 +145,17 @@ header {
   text-align: left;
 }
 
+.button {
+  background-color: var(--newPostBar);
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  height: auto;
+}
+.button:hover {
+  background-color: rgb(236, 117, 94);
+  cursor: pointer;
+}
+
 #submitFormButton {
   width: 10vw;
   margin: 0 auto;
@@ -166,9 +177,28 @@ header {
   color: var(--red);
 }
 
-pre{
+pre {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding-left: 20px !important;
   border-radius: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+  #journalContainer,
+  .comments,
+  #navBar {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #num-comments {
+    padding-left: 5vw;
+  }
+  #submitFormButton {
+    width: auto;
+  }
+
+  #journal img {
+    max-width: 60vw;
+  }
 }

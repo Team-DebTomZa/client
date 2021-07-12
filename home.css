@@ -20,13 +20,6 @@
 
 header {
   grid-area: head;
-
-}
-
- h1 {
-  color: #e85a4f;
-  display: flex;
-  justify-content: center;
 }
 
 main {
@@ -46,20 +39,16 @@ body {
     "head"
     "main"
     "foot";
-    font-family: 'Ubuntu', sans-serif;  
+  font-family: "Ubuntu", sans-serif;
   background-color: var(--backgroundColour);
   color: var(--textColor);
 }
 
 header {
-  text-align: center;
   background-color: var(--header);
+  text-align: center;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
 #headerContent {
   margin: auto;
 }
@@ -69,7 +58,7 @@ header {
 }
 
 #navBar {
-  margin: 10px 50px;
+  margin: 20px 50px;
   border-radius: 5px;
   background-color: rgb(225, 229, 235);
   padding: 5px;
@@ -87,31 +76,16 @@ header {
   display: flex;
   justify-content: space-between;
 }
-#sortFunctions {
-  display: flex;
-  margin: auto 50px;
-}
 
-#sort-form-container,
-#search-form-container {
-  display: flex;
-  width: 15vw;
-}
-
-#sort-form-container form,
-#search-form-container form {
-  width: 15vw;
-}
-
-#sort-form-container form input,
-#search-form-container form input {
-  width: 15vw;
+.new-post-bar:hover {
+  cursor: pointer;
+  background-color: rgb(236, 117, 94);
 }
 
 .new-post-bar {
   background-color: var(--newPostBar);
   margin: 30px 50px;
-  width: 15vh;
+  width: 15vw;
   border: 2px solid var(--border);
   border-radius: 15px;
   color: white;
@@ -122,10 +96,24 @@ header {
   margin: -5px 5px;
 }
 
+#newPostText {
+  margin: 15px auto;
+}
 #newPostButton {
-  margin: auto auto auto 10px;
+  margin: auto;
 }
 #newPostButton:hover {
+  cursor: pointer;
+}
+
+.button {
+  background-color: var(--newPostBar);
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  height: auto;
+}
+.button:hover {
+  background-color: rgb(236, 117, 94);
   cursor: pointer;
 }
 
@@ -137,10 +125,33 @@ header {
   border-radius: 15px;
   color: var(--textColor);
 }
+#sortFunctions {
+  display: flex;
+  width: 50vw;
+  margin: auto 50px;
+}
+
+#sort-form-container,
+#search-form-container {
+  width: 25vw;
+  margin: 0;
+}
+#sort-form,
+#search-form {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+#sort-form-container form input,
+#search-form-container form input,
+#sort-form-container form select {
+  width: 12.5vw;
+}
 
 input {
   height: 20px;
-  width: 40vw;
+  width: 37vw;
 }
 
 form {
@@ -156,14 +167,9 @@ form {
   margin: 10px 20px 20px 20px;
 }
 
-#submitButton {
-  width: 30%;
-  position: relative;
-}
-
-button {
-  width: 30%;
-  position: relative;
+.postButtons input,
+.postButtons button {
+  width: 20vw;
 }
 
 .ql-snow {
@@ -256,4 +262,52 @@ a {
 .emojis i {
   font-size: 20px;
   margin-right: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  #threads,
+  .journalContainer,
+  #sortFunctions,
+  .new-post-form,
+  #navBar,
+  .new-post-bar {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #sort-form,
+  #search-form {
+    display: flex;
+    flex-direction: column;
+  }
+  #sort-form-container form input,
+  #search-form-container form input,
+  #sort-form-container form select {
+    width: auto;
+  }
+  .new-post-bar {
+    width: 20vw;
+  }
+  #journals h2,
+  .journal-title,
+  #threads h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #postInteractionBar {
+    margin-left: 10px;
+    margin-right: 30px;
+  }
+  .ql-snow,
+  #gif-form,
+  .postButtons {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+  #gif-button,
+  #gif-search,
+  #submitButton,
+  #cancelButton {
+    width: auto;
+  }
 }

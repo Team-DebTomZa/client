@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Home.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" sizes="180x180" href="/favicon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" sizes="180x180" href="/favicon/favicon.ico" />
 
     <script defer src="home.js"></script>
     <script
@@ -21,11 +24,11 @@
       href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
       rel="stylesheet"
     />
-    <title>< /br ></title>
+    <title>Tech - a - < br ></title>
   </head>
   <body>
     <header>
-      <h1> < br > </h1>
+      <h1>Tech - a - < br ></h1>
       <p>For those new to tech and just need a < br ></p>
     </header>
 
@@ -39,7 +42,7 @@
       <section class="new-post-section">
         <div class="new-post-bar">
           <div class="new-post">
-            <p>New Post</p>
+            <p id="newPostText">New Post</p>
             <i id="newPostButton" class="fas fa-plus-circle"></i>
           </div>
         </div>
@@ -52,14 +55,14 @@
                 <option value="popular">Most popular</option>
                 <option value="comments">Most Comments</option>
               </select>
-              <input type="submit" value="sort" />
+              <input type="submit" value="Sort" class="button" />
             </form>
           </div>
 
           <div id="search-form-container">
             <form id="search-form">
-              <input type="text" placeholder="search me ..." id="search" />
-              <input type="submit" value="search" />
+              <input type="text" placeholder="Search me ..." id="search" />
+              <input type="submit" value="Search" class="button" />
             </form>
           </div>
         </div>
@@ -67,7 +70,7 @@
 
       <div class="new-post-form">
         <form id="journal-form">
-          <div>
+          <div class="titleSection">
             <label for="title">Title: </label>
             <input type="text" id="title" />
           </div>
@@ -75,14 +78,23 @@
           <span id="limit-span">Character Limit: </span>
           <div id="gif-form">
             <input type="text" id="gif-search" placeholder="gif keyword" />
-            <button type="button" id="gif-button">Add Gif</button>
+            <button type="button" id="gif-button" class="button">
+              Add Gif
+            </button>
           </div>
           <div id="gif-container">
             <img src="" id="gif" />
           </div>
           <div class="postButtons">
-            <input id="submitButton" type="submit" value="Submit Post" />
-            <button type="button" id="cancelButton">Cancel</button>
+            <input
+              id="submitButton"
+              type="submit"
+              value="Submit Post"
+              class="button"
+            />
+            <button type="button" id="cancelButton" class="button">
+              Cancel
+            </button>
           </div>
         </form>
       </div>

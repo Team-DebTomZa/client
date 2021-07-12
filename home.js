@@ -63,7 +63,7 @@ async function getRandomGif() {
 //General
 let journals ;
 let form = document.querySelector(".new-post-form");
-let newPostButton = document.querySelector("#newPostButton");
+let newPostButton = document.querySelector(".new-post-bar");
 let cancelButton = document.querySelector("#cancelButton");
 let submitForm = document.getElementById("journal-form");
 
@@ -165,42 +165,52 @@ function createJournal(item) {
 }
 
 //sorting functionality
-const sortForm = document.getElementById('sort-form');
-sortForm.addEventListener('submit', sortResults);
+const sortForm = document.getElementById("sort-form");
+sortForm.addEventListener("submit", sortResults);
 
-function sortResults(event){
+function sortResults(event) {
   event.preventDefault();
   let selection = event.target.sort.value;
-  if (selection === 'date'){
+  if (selection === "date") {
     appendBody(); //since the journals are in date order by default
   }
-  if (selection === 'popular'){
-    journals.sort((a,b) => (b.emojis[0] + b.emojis[1] - b.emojis[2]) - (a.emojis[0] + a.emojis[1] - a.emojis[2]));
+  if (selection === "popular") {
+    journals.sort(
+      (a, b) =>
+        b.emojis[0] +
+        b.emojis[1] -
+        b.emojis[2] -
+        (a.emojis[0] + a.emojis[1] - a.emojis[2])
+    );
     addJournalsToPage(journals);
   }
-  if (selection === 'comments'){
-    journals.sort((a,b) => b.comments.length - a.comments.length);
+  if (selection === "comments") {
+    journals.sort((a, b) => b.comments.length - a.comments.length);
     addJournalsToPage(journals);
   }
 }
 
-function addJournalsToPage(results){
+function addJournalsToPage(results) {
   journalsContainer.innerHTML = "";
   results.forEach((item) => createJournal(item));
   let journalTitles = document.querySelectorAll(".journal-title");
-  journalTitles.forEach((title) => title.addEventListener("click", redirectToEntryPage));
+  journalTitles.forEach((title) =>
+    title.addEventListener("click", redirectToEntryPage)
+  );
 }
 
 //search functionality
 
-const searchForm = document.getElementById('search-form');
-searchForm.addEventListener('submit', filterResults);
+const searchForm = document.getElementById("search-form");
+searchForm.addEventListener("submit", filterResults);
 
-function filterResults(event){
+function filterResults(event) {
   event.preventDefault();
   let search = event.target.search.value.toLowerCase();
+
   let results = [...journals]; 
   results = results.filter(entry => entry.title.toLowerCase().includes(search));
+
   addJournalsToPage(results);
 }
 
